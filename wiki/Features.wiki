@@ -1,0 +1,17 @@
+#summary One-sentence summary of this page.
+
+==3D Image Transitions==
+
+   * Real 3D Transitions
+   * Flat & Phong shading
+   * Horizontal or Vertical cubing
+   * Transition direction - left, right, up, down
+   * Duration & Delay
+   * Z-multiplier
+   * Cube color
+   * Automatic forward-backward transition direction manager
+   * To override global settings for each transition ...
+
+http://farm3.static.flickr.com/2786/4405366949_6c40d65def.jpg
+
+_Transition direction - left, right, up, down_
