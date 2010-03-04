@@ -11,6 +11,7 @@ AUTO_PLAY_SYMBOL=Symbol
 AUTO_PLAY_TIME_DEFAULTS=Time
 CONFIG_CODE=Config Name
 CONFIG_CUSTOM=Custom Config
+
 DESCRIPTION_HEADING_FONT=Heading Font
 DESCRIPTION_HEADING_TEXT_ALIGN=Heading Text Align
 DESCRIPTION_HEADING_TEXT_COLOR=Text Color
@@ -18,6 +19,7 @@ DESCRIPTION_HEADING_TEXT_LEADING=Heading Text Leading
 DESCRIPTION_HEADING_TEXT_LETTERSPACING=Heading Text Letterspacing
 DESCRIPTION_HEADING_TEXT_MARGIN=Heading Text Margin
 DESCRIPTION_HEADING_TEXT_SIZE=Heading Text size
+
 DESCRIPTION_PARAGRAPH_FONT=Description Font
 DESCRIPTION_PARAGRAPH_TEXT_ALIGN=Description Text Align
 DESCRIPTION_PARAGRAPH_TEXT_COLOR=Description Text Color
@@ -32,6 +34,7 @@ DESC_AUTO_PLAY_SYMBOL=Graphical auto play indicator. Available values: 'circular
 DESC_AUTO_PLAY_TIME_DEFAULTS=Auto play cycle automatically through the slides after the specified period of time (in seconds)
 DESC_CONFIG_CODE=Name of the config file. Warning: Don't edit this parameter if you don't know what to do.
 DESC_CONFIG_CUSTOM=You can choose one config file from the list.
+
 DESC_DESCRIPTION_HEADING_FONT=System font-face name for heading text
 DESC_DESCRIPTION_HEADING_TEXT_ALIGN=Range: 'left', 'center', 'right' align of the text in text field
 DESC_DESCRIPTION_HEADING_TEXT_COLOR=Hexdecimal number. Color of the text
@@ -39,6 +42,7 @@ DESC_DESCRIPTION_HEADING_TEXT_LEADING=Text leading
 DESC_DESCRIPTION_HEADING_TEXT_LETTERSPACING=Letter spacing
 DESC_DESCRIPTION_HEADING_TEXT_MARGIN=Text margin: top, right, bottom, left
 DESC_DESCRIPTION_HEADING_TEXT_SIZE=Text size in pixels
+
 DESC_DESCRIPTION_PARAGRAPH_FONT=System font-face name for paragraph text
 DESC_DESCRIPTION_PARAGRAPH_TEXT_ALIGN=Range: 'left', 'center', 'right' align of the text in text field
 DESC_DESCRIPTION_PARAGRAPH_TEXT_COLOR=Hexdecimal number. Color of the text.
@@ -46,6 +50,7 @@ DESC_DESCRIPTION_PARAGRAPH_TEXT_LEADING=Text leading
 DESC_DESCRIPTION_PARAGRAPH_TEXT_LETTERSPACING=Letter spacing
 DESC_DESCRIPTION_PARAGRAPH_TEXT_MARGIN=Text margin: top, right, bottom, left
 DESC_DESCRIPTION_PARAGRAPH_TEXT_SIZE=Text size in pixels
+
 DESC_DESCRIPTION_ROUND_CORNERS=Range from 0 to max. Enter comma separated values for topLeftRadius, topRightRadius, bottomLeftRadius and bottomRightRadius
 DESC_ENABLE_AUTO_PLAY=Enable/Disable Auto Play
 DESC_ENABLE_DESCRIPTION_BOX=Enable/Disable Description Box
@@ -63,6 +68,7 @@ DESC_PRELOADER_SYMBOL=Graphical preloader indicator. Available values: 'circular
 DESC_PRETEXT=The text or HTML code displays at the top of this module
 DESC_PREV_BUTTON_ROUND_CORNERS=Range from 0 to max. Enter comma separated values for topLeftRadius, topRightRadius, bottomLeftRadius and bottomRightRadius
 DESC_PREV_SYMBOL_TYPE=Range from 1 to 10. Numeric representation of available symbols
+
 DESC_SLIDE_DESCRIPTION=
 DESC_SLIDE_DESCRIPTION_HEADING=Text to display as heading text
 DESC_SLIDE_DESCRIPTION_LINK=Link to the page or site when the user clicks the slide
@@ -77,8 +83,10 @@ DESC_SLIDE_PANEL_VERTICAL_ALIGN=Vertical panel align relative to CU3ER.swf. Avai
 DESC_SLIDE_PANEL_WIDTH=Width of slide panel (same as your images width)
 DESC_SLIDE_UI_VISIBILITY_TIME=CU3ER detects user activity/inactivity (mouse move). If user is inactive for the specified period of time (in seconds), tweenOut is applied for all UI elements
 DESC_SLIDE_URL=Path to your image/slide
+
 DESC_SWFFONT=The font for displaying slide heading and paragraph text
 DESC_SWFOBJECT=Use SWFObject Library to detect Flash Player versions and embedding SWF files. You can use the file on your hosting (Local) or Google hosting.
+
 DESC_TRANSITION_CUBER_COLOR=Cube faces color
 DESC_TRANSITION_DELAY=Time each cube will wait before starting transition (in seconds)
 DESC_TRANSITION_DIRECTION=Transition direction / cubes rotation direction -left, right, up, down
@@ -88,6 +96,7 @@ DESC_TRANSITION_NUM=Number of slices each transition consists of
 DESC_TRANSITION_SHADER=Transition shading type - none, flat, phong
 DESC_TRANSITION_SLICING=Direction of cube slicing - horizontal or vertical
 DESC_TRANSITION_Z_MULTIPLIER=BezierTrough effect over 'z' axis during transition
+
 DESC_TWEEN_ALPHA=Range from 0 - 1. Alpha/ transparency of the object
 DESC_TWEEN_DELAY=Delay (in seconds) before the tween begins
 DESC_TWEEN_HEIGHT=height
@@ -99,11 +108,14 @@ DESC_TWEEN_TINT=Hexdecimal number. Color of the object.
 DESC_TWEEN_WIDTH=width
 DESC_TWEEN_X=x position
 DESC_TWEEN_Y=y position
+
 DESC_VINAORA_CU3ER=<h1>Vinaora Cu3er 3D Slideshow</h1><h3>User Interface</h3><p>User Interface enhances overall viewing experience enabling the user to get useful information (such as slide description or progress information while loading files) and to interact with the CU3ER (navigating trough slides or pausing the slideshow)</p><p><img src="../media/mod_vinaora_cu3er/images/docs/cu3er_overview.gif" style="border: solid 5px #ccc;" alt="General Settings"/></p><h3>General Settings</h3><p>"Slide panel" is your image/transition display area inside the CU3ER .swf file. Set your slide panel dimensions. Make sure they fit your image dimensions. Then align the 'panel' relative to the CU3ER stage. See the image below for possible align states:</p><p><img src="../media/mod_vinaora_cu3er/images/docs/general_aligment_settings.gif" style="border: solid 5px #ccc;" alt="General Settings"/></p><h3>Transition Settings</h3><p>3D Transitions represent the core feature  of the CU3ER. They are powerful, visually appealing yet very easy to set up. You can define your transition template and then override it with custom settings for each transition, if needed - by doing it this way you don't have to define each property over and over again, the CU3ER allows you to alter all you want once including the other attributes automatically.</p><p><img src="../media/mod_vinaora_cu3er/images/docs/slicing_direction.jpg" style="border: solid 5px #ccc;" alt="Transition Settings"/></p><h3>Button Settings</h3><p>Navigation buttons, represented as graphic shapes, are used for navigation through slides. Include the  node in order to display 'previous' or 'next' navigation button in the CU3ER. By clicking this button, you'll instruct the CU3ER to perform 3D transition and to show the previous defined slide in XML. Please take a look at following picture displaying possible scenarios for previous (navigation) button graphics with various round_corners settings:</p><p><img src="../media/mod_vinaora_cu3er/images/docs/navigation_buttons.gif" style="border: solid 5px #ccc;" alt="Navigation Settings"/></p><h3>Symbol Settings</h3><p>Having navigation buttons (prev/next) only, which are represented as simple graphic shapes, may not always be enough to provide the best viewing experience. In order to improve the navigation and enrich the slide viewing, a range of navigation symbols is supporting the navigation buttons. Their visual information is represented by 10 different arrow symbols that are telling the user very clearly which action they are able to perform.</p><p>There are 10 navigation symbols available:</p><p><img src="../media/mod_vinaora_cu3er/images/docs/navigation_symbols.gif" style="border: solid 5px #ccc;" alt="Symbol Settings"/></p>
+
 DIRECTION_DOWN=Down
 DIRECTION_LEFT=Left
 DIRECTION_RIGHT=Right
 DIRECTION_UP=Up
+
 ENABLE_AUTO_PLAY=Enable Auto Play
 ENABLE_DESCRIPTION_BOX=Enable Description Box
 ENABLE_NEXT_BUTTON=Show Next Button
@@ -112,9 +124,12 @@ ENABLE_PRELOADER=Enale Preloader
 ENABLE_PREV_BUTTON=Show Previous Button
 ENABLE_PREV_SYMBOL=Show Previous Symbol
 ENABLE_TRANSITION=Enable Transition
+
 MOD_VINAORA_CU3ER=mod_vinaora_cu3er
+
 NEXT_BUTTON_ROUND_CORNERS=Round Corners
 NEXT_SYMBOL_TYPE=Type
+
 PARAM_AUTOPLAY=<h2>Auto-Play Settings</h2>
 PARAM_DESCRIPTION_BOX=<h2>Description Box Settings</h2>
 PARAM_GENERAL=<h2>General Settings</h2>
@@ -128,6 +143,7 @@ PARAM_PRELOADER=<h2>Preloader Settings</h2>
 PARAM_PREVIOUS_BUTTON=<h2>Previous Button Settings</h2>
 PARAM_PREVIOUS_SYMBOL=<h2>Previous Symbol Settings</h2>
 PARAM_SLIDE=<h2>Slide/Image Settings</h2>
+
 POSTTEXT=Post-text
 PRELOADER_SYMBOL=Symbol
 PRETEXT=Pre-text
@@ -139,6 +155,7 @@ SHADER_FLAT=Flat
 SHADER_NONE=None
 SHADER_PHONG=Phong
 SILDE_DESC=<h2>SLIDES</h2><p>This is, obviously, the place where you define all slide properties such as image url, link, description content. Please, notice that this is the only XML node with a complex/nested structure in which the properties such as the node content (url, link, heading & paragraph) and node attributes (target) are included. </p>
+
 SLICING_HORIZONTAL=Horizontal
 SLICING_VERTICAL=Vertical
 SLIDE_DESCRIPTION=Description(s) Box
@@ -155,6 +172,7 @@ SLIDE_PANEL_VERTICAL_ALIGN=Panel Vertical
 SLIDE_PANEL_WIDTH=Panel Width
 SLIDE_UI_VISIBILITY_TIME=Visible Time
 SLIDE_URL=URL(s) Image
+
 SWFFONT=Embedded Font
 SWFOBJECT=SWFObject Library
 SWFOBJECT_DONT_USE=-Don't use-
@@ -164,11 +182,13 @@ SWFOBJECT_INTERNAL20=Local (v2.0)
 SWFOBJECT_INTERNAL21=Local (v2.1)
 SWFOBJECT_INTERNAL22=Local (v2.2)
 SWFOBJECT_NONE_SELECTED=-None Selected-
+
 SYMBOL_CIRCULAR=Circular
 SYMBOL_LINEAR=Linear
 TRANSITION_CUBER_COLOR=Cuber Color(s)
 TRANSITION_DELAY=Delay(s)
 TRANSITION_DESC=<h2>TRANSITIONS</h2><p>3D Transitions represent the core feature  of the CU3ER. They are powerful, visually appealing yet very easy to set up. You can define your transition template and then override it with custom settings for each transition, if needed – by doing it this way you don’t have to define each property over and over again, the CU3ER allows you to alter all you want once including the other attributes automatically. </p>
+
 TRANSITION_DIRECTION=Direction(s)
 TRANSITION_DURATION=Duration(s)
 TRANSITION_LIGHT_POSITION=Light Position(s)
@@ -176,6 +196,7 @@ TRANSITION_NUM=Number(s)
 TRANSITION_SHADER=Shader(s)
 TRANSITION_SLICING=Slicing(s)
 TRANSITION_Z_MULTIPLIER=Z multiplier(s)
+
 TWEENDEFAULTS_DESC=<h2>TWEENDEFAULTS</h2>
 TWEENIN_DESC=<h2>TWEENIN, TWEENOUT, TWEENOVER</h2>
 TWEENOUT_DESC=<h2>TWEENOUT</h2>
