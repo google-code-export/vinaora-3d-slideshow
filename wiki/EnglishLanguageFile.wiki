@@ -1,4 +1,5 @@
 #summary Language File (en-GB.mod_vinaora_cu3er.ini)
+#labels Featured
 
 {{{
 
