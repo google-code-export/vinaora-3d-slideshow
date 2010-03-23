@@ -1,0 +1,54 @@
+#labels Featured,Phase-Deploy
+#How to setup Vinaora Cu3er 3D Slideshow
+
+=How to add more images=
+
+===Go to "Slide/Image Settings" section===
+
+Please keep mind: To enter more than one item in these parameters, separate each item by a vertical bar ' | '.
+
+Example: 
+
+{{{
+value 1 | value 2 | value 3 | value 4
+}}}
+
+If a value is not exist, such as "value 3" = none, please leave a blank. Example:
+
+{{{
+value 1 | value 2 |  | value 4
+}}}
+
+==="URL(s) Image" Parameter: Path to your image(s)===
+
+Example: if you have 5 images in folder *"media/mod_vinaora_cu3er/images/demo1/"*, please input:
+
+{{{
+media/mod_vinaora_cu3er/images/demo1/slide_1.jpg | media/mod_vinaora_cu3er/images/demo1/slide_2.jpg | media/mod_vinaora_cu3er/images/demo1/slide_3.jpg | media/mod_vinaora_cu3er/images/demo1/slide_4.jpg | media/mod_vinaora_cu3er/images/demo1/slide_5.jpg
+}}}
+
+==="Link(s) to" Parameter: Link to the page or site when the user clicks the slide===
+
+Please input links correspond with 5 images above
+
+{{{
+http://vinaora.com | http://vinaora.net | http://vinaora.org | http://vinaora.info | http://joomla.org
+}}}
+
+==="Link(s) Target" Parameter: Where the linked document will be opened: '_blank', '_self', '_parent', '_top'===
+
+Please input targets correspond with 5 images above
+
+{{{
+_blank | _blank | _top | _top | _parent
+}}}
+
+Description(s) Box Parameter: If you want to show Description box, please choose "Yes"
+
+===Heading(s):===
+
+{{{
+heading 1 | heading 2 | heading 3 | heading 4 | heading 5
+}}}
+
+...
