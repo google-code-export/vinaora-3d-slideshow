@@ -11,10 +11,10 @@
 
 http://farm3.static.flickr.com/2739/4405642765_f039322361_o.png
 
-=How to turn off demo=
+=How to turn off demo and setup by yourself=
 
-  * Go to *Global Settings* >> *Custom Config* parameter and choose '--None selected--'.
-  * Don't touch "Config Name" parameter
+  * Go to *Global Settings* >> *Custom Config* parameter and choose *'--None selected--'*.
+  * Don't touch *"Config Name"* parameter
   * Press *`[Apply]`* or *`[Save]`* button
 
 =How to add more images=
