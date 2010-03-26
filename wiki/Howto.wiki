@@ -37,7 +37,7 @@ value 1 | value 2 |  | value 4
 
 ==="URL(s) Image" Parameter: Path to your image(s)===
 
-Example: if you have 5 images in folder *"media/mod_vinaora_cu3er/images/demo1/"*, please input:
+Example: if you have 5 images on your hosting or on the internet, please input:
 
 {{{
 images/stories/2.jpg | http://vinaora.com/home/xmedia/images/products/vc3s/vinaora-cu3er-3d-slide-show.jpg | http://www.google.com.vn/intl/en_com/images/logo_plain.png | joomla_logo_black.jpg | media/mod_vinaora_cu3er/images/demo1/slide_1.jpg
