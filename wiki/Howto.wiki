@@ -35,36 +35,6 @@ If a value is not exist, such as "value 3" = none, please leave a blank. Example
 value 1 | value 2 |  | value 4
 }}}
 
-==="URL(s) Image" Parameter: Path to your image(s)===
-
-Example: if you have 5 images on your hosting or on the internet, please input:
-
-{{{
-images/stories/2.jpg | http://vinaora.com/home/xmedia/images/products/vc3s/vinaora-cu3er-3d-slide-show.jpg | http://www.google.com.vn/intl/en_com/images/logo_plain.png | joomla_logo_black.jpg | media/mod_vinaora_cu3er/images/demo1/slide_1.jpg
-}}}
-
-==="Link(s) to" Parameter: Link to the page or site when the user clicks the slide===
-
-Please input links correspond with 5 images above
-
-{{{
-http://vinaora.com | http://vinaora.net | http://vinaora.org | http://vinaora.info | http://joomla.org
-}}}
-
-==="Link(s) Target" Parameter: Where the linked document will be opened: '_blank', '_self', '_parent', '_top'===
-
-Please input targets correspond with 5 images above
-
-{{{
-_blank | _blank | _top | _top | _parent
-}}}
-
-Description(s) Box Parameter: If you want to show Description box, please choose "Yes"
-
-===Heading(s):===
-
-{{{
-heading 1 | heading 2 | heading 3 | heading 4 | heading 5
-}}}
+http://farm5.static.flickr.com/4069/4464582836_6aed290c0d_o.jpg
 
 ...
