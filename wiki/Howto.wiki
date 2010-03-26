@@ -17,6 +17,8 @@ http://farm3.static.flickr.com/2739/4405642765_f039322361_o.png
   * Don't touch *"Config Name"* parameter
   * Press *`[Apply]`* or *`[Save]`* button
 
+http://farm3.static.flickr.com/2702/4464637494_d4eabf4e53.jpg
+
 =How to add more images=
 
 ===Go to "Slide/Image Settings" section===
