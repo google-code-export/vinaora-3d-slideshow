@@ -21,9 +21,7 @@ http://farm5.static.flickr.com/4068/4466150231_456e5dd731_o.png
 
 =How to add more images=
 
-===Go to "Slide/Image Settings" section===
-
-Please keep mind: To enter more than one item in these parameters, separate each item by a vertical bar ' | '.
+Please keep mind: To input more than one item in these parameters, separate each item by a vertical bar ' | '.
 
 Example: 
 
