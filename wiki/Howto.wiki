@@ -17,7 +17,7 @@ http://farm3.static.flickr.com/2739/4405642765_f039322361_o.png
   * Don't touch *"Config Name"* parameter
   * Press *`[Apply]`* or *`[Save]`* button
 
-http://farm3.static.flickr.com/2702/4464637494_d4eabf4e53.jpg
+http://farm5.static.flickr.com/4068/4466150231_456e5dd731_o.png
 
 =How to add more images=
 
@@ -37,8 +37,8 @@ If a value is not exist, such as "value 3" = none, please leave a blank. Example
 value 1 | value 2 |  | value 4
 }}}
 
-http://farm5.static.flickr.com/4057/4464607734_f4c9250fa6_o.jpg
+http://farm5.static.flickr.com/4009/4466924420_446ab5c807_o.png
 
-http://farm5.static.flickr.com/4006/4463830663_e92b02d0fc_o.jpg
+http://farm5.static.flickr.com/4072/4466150287_e7c122445a_o.png
 
 ...
