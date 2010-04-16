@@ -16,9 +16,9 @@ class modVinaoraCu3erHelper
 {
 
 	function getConfig($path, $name="config.xml"){
-	
+
 		$path = JPath::clean($path);
-	
+
 		if (file_exists($path.DS.$name)){
 			$xml =& JFactory::getXMLParser( 'simple' );
 			if ( $xml->loadFile($path.DS.$name) ){
@@ -31,16 +31,16 @@ class modVinaoraCu3erHelper
 		else{
 			//TODO File not exits
 		}
-	
+
 		return NULL;
 
 	}
 
 	function createConfig($path, $name="config.xml", $xml){
-	
+
 		jimport('joomla.filesystem.file');
 		$path = JPath::clean($path);
-	
+
 		if (is_writeable($path)){
 			if ( JFile::write($path.DS.$name, $xml) ) return true;
 			else{
@@ -105,9 +105,11 @@ class modVinaoraCu3erHelper
 		}
 
 		// Create Element - <cu3er>.<settings>.<transitions>
+		/*
 		if ($params->get('enable_transition')){
 			$nodeL2 = & modVinaoraCu3erHelper::createTransitions($nodeL1, $params);
 		}
+		*/
 
 		// Create Element - <cu3er>.<slides>
 		$nodeL2 = & modVinaoraCu3erHelper::createSlides($node, $params);
@@ -361,7 +363,7 @@ class modVinaoraCu3erHelper
 
 		$nodeL1 =& $node->addChild('Slides');
 
-		$slides = explode('|', $params->get('slide_url'));
+		$slides = explode("\n", $params->get('slide_url'));
 
 		for($i=1; $i<=count($slides); $i++){
 			$nodeL2 = modVinaoraCu3erHelper::createSlide($nodeL1, $params, $i);
@@ -381,7 +383,7 @@ class modVinaoraCu3erHelper
 		$found = false;
 
 		$param = $params->get('slide_url');
-		$str = trim( modVinaoraCu3erHelper::getParam($param, $position, '\n') );
+		$str = trim( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('url');
@@ -389,14 +391,14 @@ class modVinaoraCu3erHelper
 		}
 
 		$param = $params->get('slide_link');
-		$str = trim ( modVinaoraCu3erHelper::getParam($param, $position) );
+		$str = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('link');
 			$nodeL1->setData($str);
 
 			$param = $params->get('slide_link_target');
-			$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position) );
+			$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 			if ( strlen($str) ){
 				$nodeL1->addAttribute('target', $attb);
 			}
@@ -407,7 +409,7 @@ class modVinaoraCu3erHelper
 			$nodeL1 =& $nodeL0->addChild('description');
 
 			$param = $params->get('slide_description_heading');
-			$str = trim( modVinaoraCu3erHelper::getParam($param, $position) );
+			$str = trim( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('heading');
@@ -415,7 +417,7 @@ class modVinaoraCu3erHelper
 			}
 
 			$param = $params->get('slide_description_paragraph');
-			$str = trim( modVinaoraCu3erHelper::getParam($param, $position) );
+			$str = trim( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('paragraph');
@@ -423,14 +425,14 @@ class modVinaoraCu3erHelper
 			}
 
 			$param = $params->get('slide_description_link');
-			$str = trim ( modVinaoraCu3erHelper::getParam($param, $position) );
+			$str = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('link');
 				$nodeL2->setData($str);
 
 				$param = $params->get('slide_description_link_target');
-				$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position) );
+				$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
 				if ( strlen($attb) ){
 					$nodeL2->addAttribute('target', $attb);
 				}
