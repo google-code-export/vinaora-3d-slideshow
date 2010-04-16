@@ -33,10 +33,10 @@
 			<tweenIn x="200" y="240" width="560" height="90" alpha="0.15"/>
 			<tweenOver alpha="0.3"/>
 		</description>	
-			<transitions slicing="vertical" direction="down" duration="0.6" delay="0.2" cube_color="0x611811"/>
-		</settings>
+		<transitions slicing="vertical" direction="down" duration="0.6" delay="0.2" cube_color="0x611811"/>
+	</settings>
 	<slides>
-			<slide>
+		<slide>
 			<url>media/mod_vinaora_cu3er/images/demo1/slide_1.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
