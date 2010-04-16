@@ -30,8 +30,8 @@
 		</next_symbol>	
 		
 		<description>
-			<defaults     
-				round_corners="20, 20, 20, 20"       
+			<defaults
+				round_corners="20, 20, 20, 20"
 				heading_font="Arial"
 				heading_text_size="11"
 				heading_text_align="center"
@@ -43,7 +43,7 @@
 		
 		<transitions light_position="0,0,-100000" shader="flat" />
 			
-	</settings>    
+	</settings>
 
 	<slides>
 	
@@ -80,7 +80,7 @@
         </slide>
 		
 		<transition num="6" slicing="vertical" direction="up" delay="0.02" z_multiplier="4" />
-      
+
 		<slide>
        		<url>media/mod_vinaora_cu3er/images/demo2/slide_5.jpg</url>
 			<description>
