@@ -112,7 +112,7 @@ class modVinaoraCu3erHelper
 		// Create Element - <cu3er>.<slides>
 		$nodeL2 = & modVinaoraCu3erHelper::createSlides($node, $params);
 
-		$string = '<?xml version="1.0" encoding="utf-8"?>';
+		$string = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 		$string .= $node->toString(true);
 
 		return $string;
