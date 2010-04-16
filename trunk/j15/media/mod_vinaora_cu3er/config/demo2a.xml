@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<cu3er>
+<data>
 	<settings>
 		<general slide_panel_width="300" slide_panel_height="250" />
 		
@@ -89,5 +89,5 @@
         </slide>
 
 	</slides>
-</cu3er>
+</data>
 
