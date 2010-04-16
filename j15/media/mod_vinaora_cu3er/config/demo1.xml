@@ -2,14 +2,12 @@
 <data>
 	<settings>
 		<general slide_panel_width="960" slide_panel_height="360" />
-
 		<auto_play>
 			<defaults symbol="circular"/>
 			<tweenIn x="895" y="45" width="30" height="30" tint="0xFFFFFF" alpha="0.5"/>
 			<tweenOver alpha="1"/>
 		</auto_play>
-	
-		<prev_button>				
+			<prev_button>				
 			<tweenIn x="865" y="300" width="30" height="30" alpha="0"/>
 			<tweenOver alpha="0"/>
 		</prev_button>
@@ -30,21 +28,15 @@
 			<tweenIn x="895" y="300" alpha="0.5"/>
 			<tweenOver time="0.15" x="900" scaleX="1.1" scaleY="1.1"/>
 		</next_symbol>		
-
 		<description>
 			<defaults round_corners="10, 10, 10, 10" heading_text_size="22" heading_text_color="0xfc9900" paragraph_text_size="13" paragraph_text_color="0xFFFFFF"/>
 			<tweenIn x="200" y="240" width="560" height="90" alpha="0.15"/>
 			<tweenOver alpha="0.3"/>
 		</description>	
-	
-		<transitions slicing="vertical" direction="down" duration="0.6" delay="0.2" cube_color="0x611811"/>
-	
-	</settings>
-
-
+			<transitions slicing="vertical" direction="down" duration="0.6" delay="0.2" cube_color="0x611811"/>
+		</settings>
 	<slides>
-	
-		<slide>
+			<slide>
 			<url>media/mod_vinaora_cu3er/images/demo1/slide_1.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
