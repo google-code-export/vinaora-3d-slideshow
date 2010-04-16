@@ -112,7 +112,7 @@ class modVinaoraCu3erHelper
 		// Create Element - <cu3er>.<slides>
 		$nodeL2 = & modVinaoraCu3erHelper::createSlides($node, $params);
 
-		$string = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		$string = '<?xml version="1.0" encoding="utf-8"?>';
 		$string .= $node->toString(true);
 
 		return $string;
@@ -121,11 +121,11 @@ class modVinaoraCu3erHelper
 	function &createGeneral(&$node, $params){
 
 		$general = array();
-		$general["slide_panel_width"]				= (int) $params->get('slide_panel_width');
-		$general["slide_panel_height"]				= (int) $params->get('slide_panel_height');
-		$general["slide_panel_horizontal_align"]	= (string) $params->get('slide_panel_horizontal_align');
-		$general["slide_panel_vertical_align"]		= (string) $params->get('slide_panel_vertical_align');
-		$general["ui_visibility_time"]				= (int) $params->get('ui_visibility_time');
+		$general["slide_panel_width"] 				= (int) $params->get('slide_panel_width');
+		$general["slide_panel_height"] 				= (int) $params->get('slide_panel_height');
+		$general["slide_panel_horizontal_align"] 	= (string) $params->get('slide_panel_horizontal_align');
+		$general["slide_panel_vertical_align"] 		= (string) $params->get('slide_panel_vertical_align');
+		$general["ui_visibility_time"] 				= (int) $params->get('ui_visibility_time');
 
 		// Create Element - <cu3er>.<settings>.<general>
 		$nodeL1 = & $node->addChild('general');
