@@ -2,7 +2,6 @@
 <data>
 	<settings>
 		<general slide_panel_width="300" slide_panel_height="250" />
-		
     	<prev_button>
 			<defaults round_corners="50,50,50,50" />
 			<tweenIn x="-25" width="100" height="100" alpha=".1" />
@@ -44,34 +43,27 @@
 		<transitions light_position="0,0,-100000" shader="flat" />
 			
 	</settings>
-
 	<slides>
-	
-        <slide>
+	        <slide>
             <url>media/mod_vinaora_cu3er/images/demo2/slide_1.jpg</url>
 			<description>
 				<heading>CU3ER - free flash 3D image slider!</heading>
 			</description>
         </slide>
-
         <transition num="3" slicing="vertical" direction="down" delay="0.03" z_multiplier="3" />
-		
         <slide>
        		<url>media/mod_vinaora_cu3er/images/demo2/slide_2.jpg</url>
 			<description>
 				<heading>Customizable via XML!</heading>
 			</description>
         </slide>		
-
         <transition num="3" direction="right" />
-		
 		<slide>
             <url>media/mod_vinaora_cu3er/images/demo2/slide_3.jpg</url>
 			<description>
 				<heading>Real 3D transitions</heading>
 			</description>
         </slide>
-
 		<slide>
        		<url>media/mod_vinaora_cu3er/images/demo2/slide_4.jpg</url>
 			<description>
@@ -80,13 +72,11 @@
         </slide>
 		
 		<transition num="6" slicing="vertical" direction="up" delay="0.02" z_multiplier="4" />
-
 		<slide>
        		<url>media/mod_vinaora_cu3er/images/demo2/slide_5.jpg</url>
 			<description>
 				<heading>Unique look and feel </heading>
 			</description>
         </slide>
-
 	</slides>
 </data>
