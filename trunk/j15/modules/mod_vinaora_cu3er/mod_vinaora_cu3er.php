@@ -1,6 +1,6 @@
 <?php
 /**
-* @version		$Id: mod_vinaora_cu3er.php 2010-03-28 vinaora $
+* @version		$Id: mod_vinaora_cu3er.php 2010-04-20 vinaora $
 * @package		VINAORA VISITORS COUNTER
 * @copyright	Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.
 * @license		GNU/GPL
