@@ -14,19 +14,19 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class modVinaoraCu3erHelper
 {
-
+	/*
+	 * Get content of the config file
+	 */
 	function getConfig($path, $name="config.xml"){
 
 		$path = JPath::clean($path);
 
 		if (file_exists($path.DS.$name)){
 			$xml =& JFactory::getXMLParser( 'simple' );
-			if ( $xml->loadFile($path.DS.$name) ){
-				return $xml;
-			}
-			else{
-				//TODO File exits but not valid XML
-			}
+			$xml->loadFile($path.DS.$name);
+			//TODO File exits but not valid XML
+			
+			return $xml;
 		}
 		else{
 			//TODO File not exits
@@ -36,6 +36,9 @@ class modVinaoraCu3erHelper
 
 	}
 
+	/*
+	 * Create the config file
+	 */
 	function createConfig($path, $name="config.xml", $xml){
 
 		jimport('joomla.filesystem.file');
@@ -55,6 +58,9 @@ class modVinaoraCu3erHelper
 
 	}
 
+	/*
+	 * Create content of the config file
+	 */
 	function createXML($params){
 
 		// Create Element - <cu3er>
@@ -67,7 +73,9 @@ class modVinaoraCu3erHelper
 		$nodeL2 = & modVinaoraCu3erHelper::createGeneral($nodeL1, $params);
 
 		// Create Element - <cu3er>.<settings>.<debug>
-		//$nodeL2 = & modVinaoraCu3erHelper::createDebug($nodeL1, $params);
+		if ($params->get('enable_debug')){
+			$nodeL2 = & modVinaoraCu3erHelper::createDebug($nodeL1, $params);
+		}
 
 		// Create Element - <cu3er>.<settings>.<auto_play>
 		if ($params->get('enable_auto_play')){
@@ -120,6 +128,9 @@ class modVinaoraCu3erHelper
 		return $string;
 	}
 
+	/*
+	 * Create General Settings
+	 */
 	function &createGeneral(&$node, $params){
 
 		$general = array();
@@ -138,6 +149,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Debug Settings
+	 */
 	function &createDebug(&$node, $params){
 
 		$debug = array();
@@ -153,6 +167,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Auto-Play Settings
+	 */
 	function &createAutoPlay(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -174,6 +191,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Previous Button Settings
+	 */
 	function &createPreviousButton(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -194,6 +214,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Previous Symbol Settings
+	 */
 	function &createPreviousSymbol(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -214,6 +237,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Next Button Settings
+	 */
 	function &createNextButton(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -234,6 +260,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Next Symbol Settings
+	 */
 	function &createNextSymbol(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -254,6 +283,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Preloader Settings
+	 */
 	function &createPreloader(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -274,6 +306,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Description Box Settings
+	 */
 	function &createDescriptionBox(&$node, $params){
 
 		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
@@ -308,6 +343,9 @@ class modVinaoraCu3erHelper
 		return $node;
 	}
 
+	/*
+	 * Create Transitions Settings
+	 */
 	function &createTransitions(&$node, $params){
 		$node = &modVinaoraCu3erHelper::createTransition($node, $params, 0);
 		return $node;
