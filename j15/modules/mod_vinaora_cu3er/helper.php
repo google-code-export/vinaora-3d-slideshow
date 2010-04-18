@@ -367,7 +367,9 @@ class modVinaoraCu3erHelper
 
 		for($i=1; $i<=count($slides); $i++){
 			$nodeL2 = modVinaoraCu3erHelper::createSlide($nodeL1, $params, $i);
-			$nodeL2 = modVinaoraCu3erHelper::createTransition($nodeL1, $params, $i);
+			if ($params->get('enable_transition')){
+				$nodeL2 = modVinaoraCu3erHelper::createTransition($nodeL1, $params, $i);
+			}
 		}
 
 		return $node;
