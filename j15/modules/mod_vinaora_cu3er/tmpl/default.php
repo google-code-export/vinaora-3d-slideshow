@@ -25,9 +25,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	swfobject.embedSWF(<?php echo "\"$slideshow_path\", \"$container\", \"$width\", \"$height\", \"$flash_version\", \"$expressInstall_path\""; ?>, flashvars, attributes);
 </script>
 <div id="<?php echo $container; ?>" class="v3dslideshow<?php echo $moduleclass_sfx; ?>">
-    <a href="http://www.adobe.com/go/getflashplayer">
-        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-    </a>
+	<a href="http://www.adobe.com/go/getflashplayer">
+		<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+	</a>
 	<a href="http://vinaora.com">Joomla! Guides, Joomla Tutorials and Templates</a>
 </div>
 <!-- Website http://vinaora.com -->
