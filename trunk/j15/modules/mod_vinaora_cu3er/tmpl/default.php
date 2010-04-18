@@ -1,6 +1,6 @@
 <?php
 /**
-* @version		$Id: default.php 2010-03-01 vinaora $
+* @version		$Id: default.php 2010-04-20 vinaora $
 * @package		VINAORA VISITORS COUNTER
 * @copyright	Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.
 * @license		GNU/GPL
@@ -28,6 +28,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     <a href="http://www.adobe.com/go/getflashplayer">
         <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
     </a>
+	<a href="http://vinaora.com">Joomla! Guides, Joomla Tutorials and Templates</a>
 </div>
 <!-- Website http://vinaora.com -->
 <!-- END: VINAORA 3D SLIDE SHOW -->
