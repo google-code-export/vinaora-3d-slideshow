@@ -342,7 +342,7 @@
 			<option value="0">No</option>
 		</param>
 		<param name="debug_x" type="text" default="5" label="DEBUG_X" description="DESC_DEBUG_X" />
-		<param name="debug_y" type="text" default="5" label="DEBUG_X" description="DESC_DEBUG_X" />
+		<param name="debug_y" type="text" default="5" label="DEBUG_Y" description="DESC_DEBUG_Y" />
 
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 
