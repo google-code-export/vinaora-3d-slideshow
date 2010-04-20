@@ -72,6 +72,7 @@
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_SLIDE" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_NOTE_SLIDE" label="" description="" />
+		<param name="slide_dir" type="folderlist" default="0" label="SLIDE_DIRECTORY" description="DESC_SLIDE_DIRECTORY" directory="images/stories" filter="" exclude="" stripext="" hide_none="0" hide_default="0" />
 		<param name="slide_url" type="textarea" default="media/mod_vinaora_cu3er/images/demo1/slide_1.jpg" label="SLIDE_URL" description="DESC_SLIDE_URL" rows="5" cols="30" />
 		<param name="slide_link" type="textarea" default="" label="SLIDE_LINK" description="DESC_SLIDE_LINK" rows="5" cols="30" />
 		<param name="slide_link_target" type="textarea" default="" label="SLIDE_LINK_TARGET" description="DESC_SLIDE_LINK_TARGET" rows="5" cols="30" />
@@ -81,8 +82,8 @@
 		<param name="slide_description_link_target" type="textarea" default="" label="SLIDE_DESCRIPTION_LINK_TARGET" description="DESC_SLIDE_DESCRIPTION_LINK_TARGET" rows="5" cols="30" />
 
 		<!-- TRANSITION -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_GENERAL_TRANSITION" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_GENERAL_TRANSITION" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="PARAM_NOTE" label="" description="" />
 		<param name="enable_transition" type="radio" default="1" label="ENABLE_TRANSITION" description="DESC_ENABLE_TRANSITION" >
 			<option value="1">Yes</option>
@@ -99,8 +100,8 @@
 		<param name="transition_z_multiplier" type="text" default="" label="TRANSITION_Z_MULTIPLIER" description="DESC_TRANSITION_Z_MULTIPLIER" size="50" />
 
 		<!-- DESCRIPTION -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_DESCRIPTION_BOX" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_DESCRIPTION_BOX" label="" description="" size="50" />
 		<param name="enable_description_box" type="radio" default="1" label="ENABLE_DESCRIPTION_BOX" description="DESC_ENABLE_DESCRIPTION_BOX" >
 			<option value="1">Yes</option>
 			<option value="0">No</option>
@@ -220,8 +221,8 @@
 		<param name="cache_time" type="text" default="900" label="PARAM_CACHE_TIME" description="DESC_PARAM_CACHE_TIME" />
 
 		<!-- DESCRIPTION BOX -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_DESCRIPTION_BOX_TWEEN" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_DESCRIPTION_BOX_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="description_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="description_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
@@ -236,9 +237,9 @@
 		<param name="description_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- AUTO PLAY -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_AUTOPLAY_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_AUTOPLAY_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="auto_play_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="auto_play_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="auto_play_x" type="text" default="0" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -252,9 +253,9 @@
 		<param name="auto_play_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PRELOADER -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_PRELOADER_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_PRELOADER_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="preloader_time" type="text" default="0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="preloader_delay" type="text" default="0 | 0" label="TWEEN_DELAY" description="" size="50" />
 		<param name="preloader_x" type="text" default="0" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -268,9 +269,9 @@
 		<param name="preloader_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PREVIOUS BUTTON -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_BUTTON_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_BUTTON_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="prev_button_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="prev_button_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="prev_button_x" type="text" default="50" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -284,9 +285,9 @@
 		<param name="prev_button_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PREVIOUS SYMBOL -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_SYMBOL_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_SYMBOL_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="prev_symbol_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="prev_symbol_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="prev_symbol_x" type="text" default="50" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -300,9 +301,9 @@
 		<param name="prev_symbol_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- NEXT BUTTON -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_NEXT_BUTTON_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_NEXT_BUTTON_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="next_button_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="next_button_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="next_button_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -316,9 +317,9 @@
 		<param name="next_button_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- NEXT SYMBOL -->
-		<param name="@spacer" type="spacer" default="" label="" description="" />
-		<param name="@spacer" type="spacer" default="PARAM_NEXT_SYMBOL_TWEEN" label="" description="" />
-		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="PARAM_NEXT_SYMBOL_TWEEN" label="" description="" size="50" />
+		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="next_symbol_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
 		<param name="next_symbol_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="" size="50" />
 		<param name="next_symbol_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
@@ -342,7 +343,7 @@
 			<option value="0">No</option>
 		</param>
 		<param name="debug_x" type="text" default="5" label="DEBUG_X" description="DESC_DEBUG_X" />
-		<param name="debug_y" type="text" default="5" label="DEBUG_Y" description="DESC_DEBUG_Y" />
+		<param name="debug_y" type="text" default="5" label="DEBUG_X" description="DESC_DEBUG_X" />
 
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 
