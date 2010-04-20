@@ -613,7 +613,7 @@ class modVinaoraCu3erHelper
 	}
 
 	/*
-	 *
+	 * Get Attributes by Element Path
 	 */
 	function getAttributes($config, $path, $name = null ){
 
@@ -627,4 +627,73 @@ class modVinaoraCu3erHelper
 
 		return $attb;
 	}
+	
+	/*
+	 * Get List of Images from a Folder
+	 */
+	function getImages($folder, $absolute=false){
+	
+		jimport('joomla.filesystem.folder');
+		$filter		= '.(gif|png|jpg|jpeg)$';
+		$exclude	= array('index.html', '.htaccess');
+	
+		switch($folder){
+			case '-1':
+				$images = NULL;
+				break;
+
+			case '':
+				$images =  JFolder::files(JPATH_BASE.DS.'media'.DS.'mod_vinaora_cu3er'.DS.'images'.DS.'default', $filter, false, $absolute, $exclude);
+				break;
+
+			default:
+				$images =  JFolder::files(JPATH_BASE.DS.'images'.DS.'stories'.DS.$folder, $filter, false, $absolute, $exclude);
+				break;
+		}
+
+		return $images;
+
+	}
+	
+	/*
+	 * Get Image Path
+	 */
+	function getImagePath($folder, $absolute=true){
+		
+		switch($folder){
+			case '-1':
+				$path = NULL;
+				break;
+			
+			case '':
+				$path = 'media/mod_vinaora_cu3er/images/default';
+				$path = $absolute ? JURI::base().$path : $path;
+				break;
+			
+			default:
+				$path = 'images/stories/'.$folder;
+				$path = $absolute ? JURI::base().$path : $path;
+				break;
+		}
+		
+		return $path;
+		
+	}
+	
+	/*
+	 * Get List of Image URLs
+	 */
+	function getImageURLs($folder, $absolute=true){
+		$path 	= modVinaoraCu3erHelper::getImagePath($folder, $absolute);
+		$images	= modVinaoraCu3erHelper::getImages($folder, false);
+		
+		if (count($images)){
+			foreach($images as $key=>$value){
+				$images[$key] = $path.'/'.$value;
+			}
+		}
+
+		return $images;
+	}
+
 }

@@ -15,6 +15,16 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 // Require Base Helper
 require_once dirname(__FILE__).DS.'helper.php';
 
+// Choose images/slides from a directory
+$directory = $params->get('slide_dir');
+
+// Overwrite 'slide_url' parameter
+if ( $directory != -1 ){
+	$images = modVinaoraCu3erHelper::getImageURLs($directory);
+	$images_param = implode("\n", $images);
+	$params->set('slide_url', $images_param);
+}
+
 $config_dir 		= JPATH_BASE.DS.'media'.DS.'mod_vinaora_cu3er'.DS.'config';
 
 $config_custom		= $params->get( 'config_custom' );
