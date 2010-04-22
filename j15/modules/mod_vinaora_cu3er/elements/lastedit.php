@@ -56,6 +56,10 @@ class JElementLastEdit extends JElement
 		
 		$value		= "V".$module_id.'_'.$value.'.xml';
 		
-		return '<input type="text" name="'.$control_name.'['.$name.']" id="'.$control_name.$name.'" value="'.$value.'" '.$class.' '.$size.' />';
+		return '<input type="hidden" name="'.$control_name.'['.$name.']" id="'.$control_name.$name.'" value="'.$value.'" '.$class.' '.$size.' />';
+	}
+	
+	function fetchTooltip($label, $description, &$xmlElement, $control_name='', $name='') {
+		return false;
 	}
 }

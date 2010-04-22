@@ -9,7 +9,7 @@
 * 
 */
 
-// no direct access
+// no direct accessd
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class modVinaoraCu3erHelper
@@ -113,17 +113,17 @@ class modVinaoraCu3erHelper
 		}
 
 		// Create Element - <cu3er>.<settings>.<transitions>
-		/*
-		if ($params->get('enable_transition')){
+		if ($params->get('transition_type') == 'first'){
 			$nodeL2 = & modVinaoraCu3erHelper::createTransitions($nodeL1, $params);
 		}
-		*/
 
 		// Create Element - <cu3er>.<slides>
 		$nodeL2 = & modVinaoraCu3erHelper::createSlides($node, $params);
 
 		$string = '<?xml version="1.0" encoding="utf-8"?>';
 		$string .= $node->toString(true);
+		
+		modVinaoraCu3erHelper::replaceTweenName($string);
 
 		return $string;
 	}
@@ -271,7 +271,7 @@ class modVinaoraCu3erHelper
 		$attbs = array();
 		$attbs["defaults"]  = 
 			array(
-				"type" => $params->get('prev_symbol_type', '1')
+				"type" => $params->get('next_symbol_type', '1')
 			);
 		$attbs["tweenIn"] = & modVinaoraCu3erHelper::getTweenArray($params, 'in', $name);
 		$attbs["tweenOut"] = & modVinaoraCu3erHelper::getTweenArray($params, 'out', $name);
@@ -288,7 +288,7 @@ class modVinaoraCu3erHelper
 	 */
 	function &createPreloader(&$node, $params){
 
-		$childnaname = array("defaults", "tweenIn", "tweenOut", "tweenOver");
+		$childnaname = array("defaults", "tweenIn", "tweenOut");
 		$name = 'preloader';
 
 		$attbs = array();
@@ -298,7 +298,6 @@ class modVinaoraCu3erHelper
 			);
 		$attbs["tweenIn"] = & modVinaoraCu3erHelper::getTweenArray($params, 'in', $name);
 		$attbs["tweenOut"] = & modVinaoraCu3erHelper::getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"] = & modVinaoraCu3erHelper::getTweenArray($params, 'over', $name);
 
 		// Create Element - <cu3er>.<settings>.<preloader>
 		$nodeL1 = modVinaoraCu3erHelper::createButton($node, $name, $childnaname, $attbs);
@@ -355,20 +354,20 @@ class modVinaoraCu3erHelper
 	 * Create A Button.
 	 * $name: Previous Button, Next Button, Previous Symbol, Next Symbol, Auto Load, Preloader, Description Box
 	 */
-	function &createButton(&$node, $name, $child, $attbs){
+	function &createButton(&$node, $name, $childs, $attbs){
 
 		if (empty($name)) return;
 
 		$nodeL1 = & $node->addChild($name);
 
-		foreach ($child as $key=>$value){
+		foreach ($childs as $child){
 
-			if (empty($value)) continue;
+			if (empty($child)) continue;
+			
+			$nodeL2 = & $nodeL1->addChild($child);
 
-			$nodeL2 = & $nodeL1->addChild($value);
-
-			if (array_key_exists($value, $attbs)){
-				$attb = $attbs[$value];
+			if (array_key_exists($child, $attbs)){
+				$attb = $attbs[$child];
 				if (isset($attb)){
 					modVinaoraCu3erHelper::addAttributes($nodeL2, $attb);
 				}
@@ -405,7 +404,7 @@ class modVinaoraCu3erHelper
 
 		for($i=1; $i<=count($slides); $i++){
 			$nodeL2 = modVinaoraCu3erHelper::createSlide($nodeL1, $params, $i);
-			if ($params->get('enable_transition')){
+			if ($params->get('transition_type') != 'none'){
 				$nodeL2 = modVinaoraCu3erHelper::createTransition($nodeL1, $params, $i);
 			}
 		}
@@ -439,6 +438,7 @@ class modVinaoraCu3erHelper
 
 			$param = $params->get('slide_link_target');
 			$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
+			$attb = modVinaoraCu3erHelper::validTarget($attb);
 			if ( strlen($str) ){
 				$nodeL1->addAttribute('target', $attb);
 			}
@@ -473,6 +473,7 @@ class modVinaoraCu3erHelper
 
 				$param = $params->get('slide_description_link_target');
 				$attb = trim ( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
+				$attb = modVinaoraCu3erHelper::validTarget($attb);
 				if ( strlen($attb) ){
 					$nodeL2->addAttribute('target', $attb);
 				}
@@ -499,16 +500,34 @@ class modVinaoraCu3erHelper
 
 		$attbs = array("num", "slicing", "direction", "duration", "delay", "shader", "light_position", "cube_color", "z_multiplier");
 		$found = false;
+		
+		$a_slicing		= array("horizontal", "vertical");
+		$a_direction	= array("left", "right", "up", "down");
+		$a_shader		= array("none", "flat", "phong");
+		
+		if ($params->get('transition_type') == 'random'){
 
-		foreach ($attbs as $value){
-			$param = $params->get('transition_'.$value);
-			$str = modVinaoraCu3erHelper::getParam($param, $position);
-			if ( strlen($str) ){
-				$nodeL1->addAttribute($value, $str);
-				$found = true;
+			$nodeL1->addAttribute('num',		mt_rand(1, 5) );
+			$nodeL1->addAttribute('slicing',	$a_slicing[mt_rand(0, count($a_slicing)-1)] );
+			$nodeL1->addAttribute('direction',	$a_direction[mt_rand(0, count($a_direction)-1)] );
+			$nodeL1->addAttribute('duration',	mt_rand(1, 5) / 10);
+			$nodeL1->addAttribute('delay',		mt_rand(1, 5) / 10);
+			$nodeL1->addAttribute('shader',		$a_shader[mt_rand(0, count($a_shader)-1)] );
+
+			$found = true;
+		}
+		else{
+
+			foreach ($attbs as $value){
+				$param = $params->get('transition_'.$value);
+				$str = modVinaoraCu3erHelper::getParam($param, $position);
+				if ( strlen($str) ){
+					$nodeL1->addAttribute($value, $str);
+					$found = true;
+				}
 			}
 		}
-
+		
 		// Check $node->data ???
 		// Remove Child if have no attributes
 		if (!$found) $node->removeChild($nodeL1);
@@ -631,7 +650,7 @@ class modVinaoraCu3erHelper
 	/*
 	 * Get List of Images from a Folder
 	 */
-	function getImages($folder, $absolute=false){
+	function getImages($folder, $fullpath=false){
 	
 		jimport('joomla.filesystem.folder');
 		$filter		= '.(gif|png|jpg|jpeg)$';
@@ -643,11 +662,11 @@ class modVinaoraCu3erHelper
 				break;
 
 			case '':
-				$images =  JFolder::files(JPATH_BASE.DS.'media'.DS.'mod_vinaora_cu3er'.DS.'images'.DS.'default', $filter, false, $absolute, $exclude);
+				$images =  JFolder::files(JPATH_BASE.DS.'media'.DS.'mod_vinaora_cu3er'.DS.'images'.DS.'default', $filter, false, $fullpath, $exclude);
 				break;
 
 			default:
-				$images =  JFolder::files(JPATH_BASE.DS.'images'.DS.'stories'.DS.$folder, $filter, false, $absolute, $exclude);
+				$images =  JFolder::files(JPATH_BASE.DS.'images'.DS.'stories'.DS.$folder, $filter, false, $fullpath, $exclude);
 				break;
 		}
 
@@ -658,7 +677,7 @@ class modVinaoraCu3erHelper
 	/*
 	 * Get Image Path
 	 */
-	function getImagePath($folder, $absolute=true){
+	function getImagePath($folder){
 		
 		switch($folder){
 			case '-1':
@@ -666,13 +685,13 @@ class modVinaoraCu3erHelper
 				break;
 			
 			case '':
-				$path = 'media/mod_vinaora_cu3er/images/default';
-				$path = $absolute ? JURI::base().$path : $path;
+				$path = '/media/mod_vinaora_cu3er/images/default';
+				$path = JURI::base(true) == '/' ? $path : JURI::base(true).$path;
 				break;
 			
 			default:
-				$path = 'images/stories/'.$folder;
-				$path = $absolute ? JURI::base().$path : $path;
+				$path = '/images/stories/'.$folder;
+				$path = JURI::base(true) == '/' ? $path : JURI::base(true).$path;
 				break;
 		}
 		
@@ -683,9 +702,9 @@ class modVinaoraCu3erHelper
 	/*
 	 * Get List of Image URLs
 	 */
-	function getImageURLs($folder, $absolute=true){
-		$path 	= modVinaoraCu3erHelper::getImagePath($folder, $absolute);
-		$images	= modVinaoraCu3erHelper::getImages($folder, false);
+	function getImageURLs($folder){
+		$path 	= modVinaoraCu3erHelper::getImagePath($folder);
+		$images	= modVinaoraCu3erHelper::getImages($folder);
 		
 		if (count($images)){
 			foreach($images as $key=>$value){
@@ -695,5 +714,36 @@ class modVinaoraCu3erHelper
 
 		return $images;
 	}
+	
+	/*
+	 * Valid Link Target
+	 */
+	function validTarget($target = '_blank'){
+		$target = strtolower($target);
+		$target = strpos($target, '_') === false ? '_'.$target : $target;
 
+		$valid = array ('_blank', '_top', '_parent', '_self');
+		$target = in_array($target, $valid) ? $target : '_blank';
+		
+		return $target;
+	}
+	
+	/*
+	 * Get Random Color
+	 */
+	function rand_color() {
+		return substr('00000' . dechex(mt_rand(0, 0xffffff)), -6);
+	}
+	
+	/*
+	 * Replace TweenName from lowercase to pascalName format
+	 */
+	function &replaceTweenName(&$str){
+
+		$str = str_replace('<tweenin ', '<tweenIn ', $str);
+		$str = str_replace('<tweenout ', '<tweenOut ', $str);
+		$str = str_replace('<tweenover ', '<tweenOver ', $str);
+		
+		return $str;
+	}
 }
