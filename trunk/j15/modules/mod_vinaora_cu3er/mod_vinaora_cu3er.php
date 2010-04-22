@@ -30,10 +30,8 @@ $config_dir 		= JPATH_BASE.DS.'media'.DS.'mod_vinaora_cu3er'.DS.'config';
 $config_custom		= $params->get( 'config_custom' );
 $config_name 		= $params->get( 'config_code' );
 
-$config_name		= ($config_name) ? $config_name : "demo1.xml";
+$config_name		= ($config_name) ? $config_name : "demo1.xml.php";
 $config_name		= ($config_custom=="-1") ? $config_name : $config_custom;
-
-// if (substr($config_name, -4, 4) != ".xml") $config_name .= ".xml";
 
 // Check Config file (.xml) exits and valid XML
 $config = modVinaoraCu3erHelper::getConfig($config_dir, $config_name);
@@ -56,7 +54,7 @@ $height	= (!empty($height)) ? $height : $params->get( 'slide_panel_height' );
 modVinaoraCu3erHelper::addSWFObject( $params->get('swfobject') );
 
 // Initialize variables
-$media					= JURI::base().'media/mod_vinaora_cu3er/';		// Use JURI::base() for absolute URL
+$media					= JURI::base().'media/mod_vinaora_cu3er/';		// Use JURI::base() for Full URL
 $config_path 			= $media.'config/'.$config_name;
 $slideshow_path 		= $media.'flash/cu3er.swf';
 $expressInstall_path 	= $media.'js/swfobject/expressInstall.swf';
