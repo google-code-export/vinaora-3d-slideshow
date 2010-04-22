@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cu3er>
+	<settings>
+		<general slide_panel_width="960" slide_panel_height="360" slide_panel_horizontal_align="center" slide_panel_vertical_align="center" ui_visibility_time="3" />
+		<prev_button>
+			<defaults round_corners="0, 0, 0, 0" />
+			<tweenIn time="0.3" delay="0" x="50" width="50" height="50" rotation="0" alpha="0.5" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" alpha="0" tint="0x000000" />
+			<tweenOver time="0.3" delay="0" alpha="0.85" tint="0x000000" />
+		</prev_button>
+		<prev_symbol>
+			<defaults type="3" />
+			<tweenIn time="0.3" delay="0" x="50" rotation="-180" alpha="0.85" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" alpha="0" tint="0x000000" />
+			<tweenOver time="0.3" delay="0" alpha="1" tint="0x000000" />
+		</prev_symbol>
+		<next_button>
+			<defaults round_corners="0, 0, 0, 0" />
+			<tweenIn time="0.3" delay="0" width="50" height="50" rotation="0" alpha="0.5" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" alpha="0" tint="0x000000" />
+			<tweenOver time="0.3" delay="0" alpha="0.85" tint="0x000000" />
+		</next_button>
+		<next_symbol>
+			<defaults type="10" />
+			<tweenIn time="0.3" delay="0" rotation="0" alpha="0.85" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" alpha="0" tint="0x000000" />
+			<tweenOver time="0.3" delay="0" alpha="1" tint="0x000000" />
+		</next_symbol>
+		<preloader>
+			<defaults symbol="linear" />
+			<tweenIn time="0.3" delay="0" x="150" y="150" height="5" rotation="0" alpha="0.85" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" x="150" y="150" alpha="0" tint="0x000000" />
+		</preloader>
+		<description>
+			<defaults round_corners="0, 0, 0, 0" heading_font="Georgia" heading_text_size="18" heading_text_color="0x000000" heading_text_align="left" heading_text_margin="10 , 25 , 0 , 25" heading_text_leading="0" heading_text_letterSpacing="0" paragraph_font="Arial" paragraph_text_size="12" paragraph_text_color="0x000000" paragraph_text_align="left" paragraph_text_margin="5, 25, 0, 25" paragraph_text_leading="0" paragraph_text_letterSpacing="0" />
+			<tweenIn time="0.3" delay="0" x="0" height="100" rotation="0" alpha="0.5" tint="0x000000" scaleX="1" scaleY="1" />
+			<tweenOut time="0.3" delay="0" alpha="0" tint="0x000000" />
+			<tweenOver time="0.3" delay="0" alpha="0.85" tint="0x000000" />
+		</description>
+	</settings>
+	<slides>
+		<slide>
+			<url>/j1515/media/mod_vinaora_cu3er/images/default/slide_1.jpg</url>
+			<link target="_blank">http://vinaora.com</link>
+			<description>
+				<heading>&lt;b&gt;Vinaora 3D Slide Show&lt;/b&gt;</heading>
+				<paragraph>Vinaora 3D Slide Show is nice extension for Joomla</paragraph>
+				<link target="_blank">http://vinaora.com</link>
+			</description>
+		</slide>
+		<transition num="4" slicing="horizontal" direction="left" duration="0.5" delay="0.4" shader="phong" />
+		<slide>
+			<url>/j1515/media/mod_vinaora_cu3er/images/default/slide_2.jpg</url>
+			<link target="_blank">http://vinaora.com/home</link>
+			<description>
+				<heading>Vinaora Visitors Counter</heading>
+				<paragraph>Description for Slide 2</paragraph>
+				<link target="_blank">http://vinaora.com/home</link>
+			</description>
+		</slide>
+		<transition num="3" slicing="horizontal" direction="up" duration="0.5" delay="0.4" shader="none" />
+		<slide>
+			<url>/j1515/media/mod_vinaora_cu3er/images/default/slide_3.jpg</url>
+			<link target="_top">http://bit.ly/101Aqf</link>
+			<description>
+				<heading>Vinaora World Time Clock</heading>
+				<paragraph>Description for Slide 3</paragraph>
+				<link target="_top">http://bit.ly/101Aqf</link>
+			</description>
+		</slide>
+		<transition num="1" slicing="vertical" direction="right" duration="0.3" delay="0.5" shader="flat" />
+	</slides>
+</cu3er>

@@ -1,5 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<cu3er>
+﻿<?php 
+$script		= $_SERVER['SCRIPT_NAME'];
+$base_path	= substr($script, 0 , strpos($script, 'media/mod_vinaora_cu3er'));
+header ("content-type: text/xml");
+header ("Cache-Control: max-age=86400, must-revalidate");
+?>
+<data>
 	<settings>
 		<general slide_panel_width="300" slide_panel_height="250" />
 		<auto_play>
@@ -48,37 +53,37 @@
 	</settings>
 	<slides>
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo2/slide_1.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo2/slide_1.jpg</url>
 			<description>
 				<heading>CU3ER - flash 3D slider!</heading>
 			</description>
 		</slide>
 		<transition num="3" slicing="vertical" direction="down" delay="0.03" z_multiplier="3" />
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo2/slide_2.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo2/slide_2.jpg</url>
 			<description>
 				<heading>Customizable via XML!</heading>
 			</description>
 		</slide>
 		<transition num="3" direction="right" />
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo2/slide_3.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo2/slide_3.jpg</url>
 			<description>
 				<heading>Real 3D transitions</heading>
 			</description>
 		</slide>
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo2/slide_4.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo2/slide_4.jpg</url>
 			<description>
-				<heading>Flat & phong shading</heading>
+				<heading>Flat &amp; phong shading</heading>
 			</description>
 		</slide>
 		<transition num="6" slicing="vertical" direction="up" delay="0.02" z_multiplier="4" />
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo2/slide_5.jpg</url>
+       		<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo2/slide_5.jpg</url>
 			<description>
-				<heading>Unique look & feel </heading>
+				<heading>Unique look &amp; feel </heading>
 			</description>
-		</slide>
+        </slide>
 	</slides>
-</cu3er>
+</data>

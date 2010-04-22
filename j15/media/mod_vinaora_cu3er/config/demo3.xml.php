@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?php 
+$script		= $_SERVER['SCRIPT_NAME'];
+$base_path	= substr($script, 0 , strpos($script, 'media/mod_vinaora_cu3er'));
+header ("content-type: text/xml");
+header ("Cache-Control: max-age=86400, must-revalidate");
+?>
 <cu3er>
 	<settings>
 		<general slide_panel_width="600" slide_panel_height="300" />
@@ -21,26 +26,26 @@
 	</settings>
 	<slides>
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo3/slide_1.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo3/slide_1.jpg</url>
 			<description />
 		</slide>
 		<!-- changing transition between first & second slide -->
 		<transition num="3" slicing="vertical" direction="down"/>
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo3/slide_2.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo3/slide_2.jpg</url>
 		</slide>
 		<!-- changing transition between second & third slide -->
 		<transition num="4" direction="right" shader="flat" />
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo3/slide_3.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo3/slide_3.jpg</url>
 		</slide>
 		<!-- transitions properties defined in transitions template -->
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo3/slide_4.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo3/slide_4.jpg</url>
 		</slide>
 		<transition num="6" slicing="vertical" direction="up" shader="flat" delay="0.05" z_multiplier="4" />
 		<slide>
-			<url>media/mod_vinaora_cu3er/images/demo3/slide_5.jpg</url>
+			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo3/slide_5.jpg</url>
 		</slide>
 	</slides>
 </cu3er>
