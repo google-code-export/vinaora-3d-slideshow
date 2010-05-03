@@ -1,9 +1,9 @@
 <?php
 /**
-* @version		$Id: mod_vinaora_cu3er.php 2010-04-20 vinaora $
-* @package		VINAORA VISITORS COUNTER
+* @version		$Id: mod_vinaora_cu3er.php 2010-04-30 vinaora $
+* @package		VINAORA CU3ER 3D SLIDESHOW
 * @copyright	Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.
-* @license		GNU/GPL.
+* @license		GNU/GPL
 * @website		http://vinaora.com
 * @email		admin@vinaora.com
 * 
