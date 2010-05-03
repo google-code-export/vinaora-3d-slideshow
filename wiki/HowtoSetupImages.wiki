@@ -1,6 +1,16 @@
 #labels Featured,Phase-Deploy
 =How to setup slides/ images=
 
+== Step 1: Upload images ==
+
+  * Upload your images to a folder, such as: *images/stories/3dslideshow*
+  * Go to "Custom Config" parameter, choose "-None Selected-"
+  * Go to "Image Directory" parameter, choose the folder which you've uploaded images to (such as: *3dslideshow*)
+
+== Step 2: Config Link, Heading, Description ==
+
+http://farm5.static.flickr.com/4068/4575587328_8641194c9e_o.png
+
 Please keep mind: To input more than one item in these parameters, let each one per line.
 
 Example: 
@@ -20,5 +30,3 @@ Item 2
 
 Item 4
 }}}
-
-http://farm5.static.flickr.com/4068/4575587328_8641194c9e_o.png
