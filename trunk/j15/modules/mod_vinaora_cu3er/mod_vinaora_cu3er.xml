@@ -279,7 +279,7 @@
 		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_BUTTON_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
 		<param name="prev_button_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="prev_button_delay" type="text" default=" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="prev_button_delay" type="text" default="" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="prev_button_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="prev_button_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="prev_button_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
