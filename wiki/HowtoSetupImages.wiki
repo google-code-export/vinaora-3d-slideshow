@@ -1,0 +1,24 @@
+#labels Featured,Phase-Deploy
+=How to setup slides/ images=
+
+Please keep mind: To input more than one item in these parameters, let each one per line.
+
+Example: 
+
+{{{
+Item 1
+Item 2
+Item 3
+Item 4
+}}}
+
+If a item is not exist, such as "item 3", please leave a blank line. Example:
+
+{{{
+Item 1
+Item 2
+
+Item 4
+}}}
+
+http://farm5.static.flickr.com/4068/4575587328_8641194c9e_o.png
