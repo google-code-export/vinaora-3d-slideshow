@@ -7,7 +7,7 @@
 
 == Step 2: Upload images ==
 
-  * Upload your images to a folder, such as: *images/stories/3dslideshow*
+  * Upload your images to a folder which is a child of *"images/stories"*, such as: *images/stories/3dslideshow*
 
   * Go to *"Image Directory"* parameter, choose the folder which you've uploaded images to (such as: *3dslideshow*)
 
