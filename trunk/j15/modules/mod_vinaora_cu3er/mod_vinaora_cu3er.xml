@@ -230,113 +230,113 @@
 		<!-- DESCRIPTION BOX -->
 		<param name="@spacer" type="spacer" default="PARAM_DESCRIPTION_BOX_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="description_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="description_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
-		<param name="description_x" type="text" default="0" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
+		<param name="description_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="description_delay" type="text" default="" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="description_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="description_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="description_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
-		<param name="description_height" type="text" default="100" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="description_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="description_alpha" type="text" default="0.5 | 0 | 0.85" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="description_tint" type="text" default="0x000000" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="description_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="description_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="description_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
+		<param name="description_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="description_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="description_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="description_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="description_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- AUTO PLAY -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_AUTOPLAY_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="auto_play_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="auto_play_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
-		<param name="auto_play_x" type="text" default="0" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
-		<param name="auto_play_y" type="text" default="0" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
+		<param name="auto_play_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="auto_play_delay" type="text" default="" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="auto_play_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
+		<param name="auto_play_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="auto_play_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
-		<param name="auto_play_height" type="text" default="5 |  | 15" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="auto_play_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="auto_play_alpha" type="text" default="0.5 | 0 | 0.85" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="auto_play_tint" type="text" default="0x000000" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="auto_play_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="auto_play_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="auto_play_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
+		<param name="auto_play_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="auto_play_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="auto_play_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="auto_play_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="auto_play_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PRELOADER -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_PRELOADER_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="preloader_time" type="text" default="0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="preloader_delay" type="text" default="0 | 0" label="TWEEN_DELAY" description="" size="50" />
-		<param name="preloader_x" type="text" default="0" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
-		<param name="preloader_y" type="text" default="0" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
+		<param name="preloader_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="preloader_delay" type="text" default="" label="TWEEN_DELAY" description="" size="50" />
+		<param name="preloader_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
+		<param name="preloader_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="preloader_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
-		<param name="preloader_height" type="text" default="5" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="preloader_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="preloader_alpha" type="text" default="0.85 | 0" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="preloader_tint" type="text" default="0xFF0000" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="preloader_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="preloader_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="preloader_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
+		<param name="preloader_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="preloader_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="preloader_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="preloader_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="preloader_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PREVIOUS BUTTON -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_BUTTON_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="prev_button_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="prev_button_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
-		<param name="prev_button_x" type="text" default="50" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
+		<param name="prev_button_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="prev_button_delay" type="text" default=" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="prev_button_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="prev_button_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
-		<param name="prev_button_width" type="text" default="50" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
-		<param name="prev_button_height" type="text" default="50" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="prev_button_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="prev_button_alpha" type="text" default="0.5 | 0 | 0.85" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="prev_button_tint" type="text" default="0x000000" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="prev_button_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="prev_button_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="prev_button_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
+		<param name="prev_button_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
+		<param name="prev_button_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="prev_button_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="prev_button_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="prev_button_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="prev_button_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- PREVIOUS SYMBOL -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_PREVIOUS_SYMBOL_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="prev_symbol_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="prev_symbol_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
-		<param name="prev_symbol_x" type="text" default="50" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
+		<param name="prev_symbol_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="prev_symbol_delay" type="text" default="" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="prev_symbol_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="prev_symbol_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="prev_symbol_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
 		<param name="prev_symbol_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="prev_symbol_rotation" type="text" default="-180" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="prev_symbol_alpha" type="text" default="0.85 | 0 | 1" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="prev_symbol_tint" type="text" default="0xFFFFFF" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="prev_symbol_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="prev_symbol_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="prev_symbol_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="prev_symbol_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="prev_symbol_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="prev_symbol_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="prev_symbol_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- NEXT BUTTON -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_NEXT_BUTTON_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="next_button_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="next_button_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
+		<param name="next_button_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="next_button_delay" type="text" default="" label="TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" />
 		<param name="next_button_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="next_button_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
-		<param name="next_button_width" type="text" default="50" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
-		<param name="next_button_height" type="text" default="50" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="next_button_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="next_button_alpha" type="text" default="0.5 | 0 | 0.85" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="next_button_tint" type="text" default="0x000000" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="next_button_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="next_button_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="next_button_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
+		<param name="next_button_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
+		<param name="next_button_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="next_button_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="next_button_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="next_button_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="next_button_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 		<!-- NEXT SYMBOL -->
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="@spacer" type="spacer" default="PARAM_NEXT_SYMBOL_TWEEN" label="" description="" size="50" />
 		<param name="@spacer" type="spacer" default="TWEEN_DESC" label="" description="" size="50" />
-		<param name="next_symbol_time" type="text" default="0.3 | 0.3 | 0.3" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
-		<param name="next_symbol_delay" type="text" default="0 | 0 | 0" label="TWEEN_DELAY" description="" size="50" />
+		<param name="next_symbol_time" type="text" default="" label="TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" />
+		<param name="next_symbol_delay" type="text" default="" label="TWEEN_DELAY" description="" size="50" />
 		<param name="next_symbol_x" type="text" default="" label="TWEEN_X" description="DESC_TWEEN_X" size="50" />
 		<param name="next_symbol_y" type="text" default="" label="TWEEN_Y" description="DESC_TWEEN_Y" size="50" />
 		<param name="next_symbol_width" type="text" default="" label="TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" />
 		<param name="next_symbol_height" type="text" default="" label="TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" />
-		<param name="next_symbol_rotation" type="text" default="0" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
-		<param name="next_symbol_alpha" type="text" default="0.85 | 0 | 1" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
-		<param name="next_symbol_tint" type="text" default="0xFFFFFF" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
-		<param name="next_symbol_scaleX" type="text" default="1" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
-		<param name="next_symbol_scaleY" type="text" default="1" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
+		<param name="next_symbol_rotation" type="text" default="" label="TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" />
+		<param name="next_symbol_alpha" type="text" default="" label="TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" />
+		<param name="next_symbol_tint" type="text" default="" label="TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" />
+		<param name="next_symbol_scaleX" type="text" default="" label="TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" />
+		<param name="next_symbol_scaleY" type="text" default="" label="TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" />
 
 	</params>
 
