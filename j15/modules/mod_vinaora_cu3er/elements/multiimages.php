@@ -1,7 +1,7 @@
 <?php
 /**
 * @version		$Id: multiimages.php 2010-03-01 vinaora $
-* @package		VINAORA VISITORS COUNTER
+* @package		VINAORA CU3ER 3D SLIDESHOW
 * @copyright	Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.
 * @license		GNU/GPL
 * @website		http://vinaora.com

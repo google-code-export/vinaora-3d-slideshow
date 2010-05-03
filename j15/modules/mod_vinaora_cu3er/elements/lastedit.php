@@ -1,7 +1,7 @@
 <?php
 /**
-* @version		$Id: lastedit.php 2010-03-01 vinaora $
-* @package		VINAORA VISITORS COUNTER
+* @version		$Id: lastedit.php 2010-04-30 vinaora $
+* @package		VINAORA CU3ER 3D SLIDESHOW
 * @copyright	Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.
 * @license		GNU/GPL
 * @website		http://vinaora.com
@@ -11,14 +11,6 @@
 
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
-
-/**
- * Renders a text element
- *
- * @package 	Joomla.Framework
- * @subpackage		Parameter
- * @since		1.5
- */
 
 class JElementLastEdit extends JElement
 {
