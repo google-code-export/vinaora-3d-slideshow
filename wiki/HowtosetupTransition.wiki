@@ -5,8 +5,6 @@ Please keep mind: To input more than one item in these parameters, separate each
 
 Example:
 
-Example:
-
 {{{
 value 1 | value 2 | value 3 | value 4
 }}}
