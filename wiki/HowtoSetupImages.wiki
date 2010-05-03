@@ -1,13 +1,17 @@
 #labels Featured,Phase-Deploy
 =How to setup slides/ images=
 
-== Step 1: Upload images ==
+== Step 1: Turn off demo ==
+
+  * Go to *"Custom Config"* parameter, choose *"-None Selected-"*
+
+== Step 2: Upload images ==
 
   * Upload your images to a folder, such as: *images/stories/3dslideshow*
-  * Go to *"Custom Config"* parameter, choose "-None Selected-"
+
   * Go to *"Image Directory"* parameter, choose the folder which you've uploaded images to (such as: *3dslideshow*)
 
-== Step 2: Config Link, Heading, Description ==
+== Step 3: Config Link, Heading, Description ==
 
 Warning: Don't use *"URL(s) Image"* parameter, if you've choose one directory from *"Image Directory"* list.
 
