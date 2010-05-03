@@ -9,7 +9,9 @@
 
 == Step 2: Config Link, Heading, Description ==
 
+{{{
 Warning: Don't use *"URL(s) Image"* parameter, if you've choose one directory from *"Image Directory"* list.
+}}}
 
 http://farm5.static.flickr.com/4068/4575587328_8641194c9e_o.png
 
