@@ -505,7 +505,7 @@ class modVinaoraCu3erHelper
 		$a_direction	= array("left", "right", "up", "down");
 		$a_shader		= array("none", "flat", "phong");
 		
-		if ($params->get('transition_type') == 'random'){
+		if ($params->get('transition_type') == 'auto'){
 
 			$nodeL1->addAttribute('num',		mt_rand(1, 5) );
 			$nodeL1->addAttribute('slicing',	$a_slicing[mt_rand(0, count($a_slicing)-1)] );
