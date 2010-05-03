@@ -2,13 +2,13 @@
 <!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/module-install.dtd">
 <install type="module" version="1.5.0" method="upgrade">
 	<name>Vinaora Cu3er 3D SlideShow</name>
-	<creationDate>2010-04-20</creationDate>
+	<creationDate>2010-04-30</creationDate>
 	<author>VINAORA</author>
 	<authorEmail>admin@vinaora.com</authorEmail>
 	<authorUrl>http://vinaora.com</authorUrl>
 	<copyright>Copyright (C) 2010 VINAORA and CU3ER. All rights reserved.</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<description>DESC_VINAORA_CU3ER</description>
 	<files>
 		<filename module="mod_vinaora_cu3er">mod_vinaora_cu3er.php</filename>
@@ -60,7 +60,7 @@
 		<param name="@spacer" type="spacer" default="PARAM_SLIDE" label="" description="" />
 		<param name="slide_dir" type="folderlist" default="0" label="SLIDE_DIRECTORY" description="DESC_SLIDE_DIRECTORY" directory="images/stories" filter="" exclude="" hide_none="0" hide_default="0" />
 		<param name="@spacer" type="spacer" default="PARAM_NOTE_SLIDE" label="" description="" />
-		<param name="slide_url" type="textarea" default="media/mod_vinaora_cu3er/images/demo1/slide_1.jpg" label="SLIDE_URL" description="DESC_SLIDE_URL" rows="5" cols="30" />
+		<param name="slide_url" type="textarea" default="" label="SLIDE_URL" description="DESC_SLIDE_URL" rows="5" cols="30" />
 		<param name="slide_link" type="textarea" default="" label="SLIDE_LINK" description="DESC_SLIDE_LINK" rows="5" cols="30" />
 		<param name="slide_link_target" type="textarea" default="" label="SLIDE_LINK_TARGET" description="DESC_SLIDE_LINK_TARGET" rows="5" cols="30" />
 		<param name="slide_description_heading" type="textarea" default="" label="SLIDE_DESCRIPTION_HEADING" description="DESC_SLIDE_DESCRIPTION_HEADING" rows="5" cols="30" />
@@ -73,7 +73,7 @@
 		<param name="@spacer" type="spacer" default="PARAM_GENERAL_TRANSITION" label="" description="" size="50" />
 		<param name="transition_type" type="list" default="custom" label="TRANSITION_TYPE" description="DESC_TRANSITION_TYPE" >
 			<option value="none">TRANSITION_TYPE_NONE</option>
-			<option value="random">TRANSITION_TYPE_RANDOM</option>
+			<option value="auto">TRANSITION_TYPE_AUTO</option>
 			<option value="first">TRANSITION_TYPE_FIRST</option>
 			<option value="custom">TRANSITION_TYPE_CUSTOM</option>
 		</param>
