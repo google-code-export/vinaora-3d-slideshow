@@ -4,8 +4,8 @@
 == Step 1: Upload images ==
 
   * Upload your images to a folder, such as: *images/stories/3dslideshow*
-  * Go to "Custom Config" parameter, choose "-None Selected-"
-  * Go to "Image Directory" parameter, choose the folder which you've uploaded images to (such as: *3dslideshow*)
+  * Go to *"Custom Config"* parameter, choose "-None Selected-"
+  * Go to *"Image Directory"* parameter, choose the folder which you've uploaded images to (such as: *3dslideshow*)
 
 == Step 2: Config Link, Heading, Description ==
 
