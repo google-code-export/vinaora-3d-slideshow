@@ -423,6 +423,7 @@ class modVinaoraCu3erHelper
 
 		$param = $params->get('slide_url');
 		$str = trim( modVinaoraCu3erHelper::getParam($param, $position, "\n") );
+		$str = modVinaoraCu3erHelper::validImageUrl($str);
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('url');
@@ -714,7 +715,18 @@ class modVinaoraCu3erHelper
 
 		return $images;
 	}
-	
+
+	/*
+	 * Valid Image Url
+	 */
+	function validImageUrl($url){
+
+		$url = parse_url($url);
+		$url = $url["path"];
+
+		return $url;
+	}
+
 	/*
 	 * Valid Link Target
 	 */
