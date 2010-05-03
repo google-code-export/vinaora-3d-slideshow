@@ -13,17 +13,42 @@ http://farm4.static.flickr.com/3370/4575595926_d1540ca227_o.png
 
 =How to turn off demo and setup by yourself=
 
-  * Go to *Global Settings* >> *Custom Config* parameter and choose *'--None selected--'*.
-  * Don't touch *"Config Name"* parameter
+  * Go to *Custom Config* parameter and choose *'--None selected--'*.
   * Press *`[Apply]`* or *`[Save]`* button
 
 http://farm5.static.flickr.com/4068/4466150231_456e5dd731_o.png
 
-=How to add more images=
+=How to setup slides/ images=
+
+Please keep mind: To input more than one item in these parameters, let each one per line.
+
+Example: 
+
+{{{
+Item 1
+Item 2
+Item 3
+Item 4
+}}}
+
+If a item is not exist, such as "item 3", please leave a blank line. Example:
+
+{{{
+Item 1
+Item 2
+
+Item 4
+}}}
+
+http://farm5.static.flickr.com/4068/4575587328_8641194c9e_o.png
+
+=How to setup slides/ images=
 
 Please keep mind: To input more than one item in these parameters, separate each item by a vertical bar ' | '.
 
-Example: 
+Example:
+
+Example:
 
 {{{
 value 1 | value 2 | value 3 | value 4
@@ -35,8 +60,6 @@ If a value is not exist, such as "value 3" = none, please leave a blank. Example
 value 1 | value 2 |  | value 4
 }}}
 
-http://farm5.static.flickr.com/4009/4466924420_446ab5c807_o.png
-
-http://farm5.static.flickr.com/4072/4466150287_e7c122445a_o.png
+http://farm4.static.flickr.com/3416/4574953767_ee464f5e34_o.png
 
 ...
