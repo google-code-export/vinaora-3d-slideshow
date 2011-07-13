@@ -1,23 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.6.0" method="upgrade" client="site">
-  <name>mod_vinaora_cu3er_3d_slideshow</name>
-  <authore>b</authore>
-  <creationDate>2011-07-13</creationDate>
-  <copyright>© 2011. All rights reserved.</copyright>
-  <license>GNU/GPL</license>
-  <authorEmail></authorEmail>
-  <authoreUrl></authoreUrl>
-  <version>b</version>
-  <description>EXTENSION_DESCRIPTION</description>
-  <files>
-    <filename>helper.php</filename>
-    <filename>index.html</filename>
-    <filename module="mod_vinaora_cu3er_3d_slideshow">mod_vinaora_cu3er_3d_slideshow.php</filename>
-    <filename>mod_vinaora_cu3er_3d_slideshow.xml</filename>
-    <folder>tmpl</folder>
-  </files>
-  <languages>
-    <language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.ini</language>
-    <language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.sys.ini</language>
-  </languages>
+<extension type="module" version="1.7.0" method="upgrade" client="site">
+	<name>mod_vinaora_cu3er_3d_slideshow</name>
+	<author>VINAORA</author>
+	<creationDate>2011-07-13</creationDate>
+	<copyright>Copyright (C) 2010-2011 VINAORA. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@vinaora.com</authorEmail>
+	<authorUrl>http://vinaora.com</authorUrl>
+	<version>1.7.0</version>
+	<description>MOD_VINAORA_CU3ER_3D_SLIDESHOW_DESC</description>
+	<files>
+		<filename module="mod_vinaora_cu3er_3d_slideshow">mod_vinaora_cu3er_3d_slideshow.php</filename>
+		<filename>mod_vinaora_cu3er_3d_slideshow.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>fields</folder>
+		<folder>helper</folder>
+		<folder>tmpl</folder>
+	</files>
+	<media folder="media" destination="mod_vinaora_cu3er_3d_slideshow">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>config</folder>
+		<folder>flash</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.ini</language>
+		<language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_vinaora_cu3er_3d_slideshow/fields" >
+			<fieldset name="basic">
+			</fieldset>
+			<fieldset name="advanced">
+
+				<!-- DESCRIPTION BOX -->
+				<field type="spacer" name="@spacer_description" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_&lt;hr/&gt;&lt;h2&gt;More parameters vagdfa gasg ags&lt;/h2&gt;" />
+				<field name="description_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="description_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
+				<field name="description_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="description_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="description_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="description_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="description_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="description_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="description_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="description_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="description_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- AUTO PLAY -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_AUTOPLAY_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="auto_play_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="auto_play_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
+				<field name="auto_play_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="auto_play_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="auto_play_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="auto_play_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="auto_play_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="auto_play_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="auto_play_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="auto_play_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="auto_play_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- PRELOADER -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_PRELOADER_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="preloader_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="preloader_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="" size="50" ></field>
+				<field name="preloader_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="preloader_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="preloader_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="preloader_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="preloader_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="preloader_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="preloader_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="preloader_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="preloader_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- PREVIOUS BUTTON -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_PREVIOUS_BUTTON_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="prev_button_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="prev_button_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
+				<field name="prev_button_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="prev_button_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="prev_button_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="prev_button_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="prev_button_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="prev_button_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="prev_button_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="prev_button_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="prev_button_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- PREVIOUS SYMBOL -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_PREVIOUS_SYMBOL_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="prev_symbol_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="prev_symbol_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
+				<field name="prev_symbol_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="prev_symbol_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="prev_symbol_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="prev_symbol_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="prev_symbol_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="prev_symbol_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="prev_symbol_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="prev_symbol_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="prev_symbol_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- NEXT BUTTON -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_NEXT_BUTTON_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="next_button_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="next_button_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
+				<field name="next_button_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="next_button_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="next_button_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="next_button_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="next_button_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="next_button_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="next_button_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="next_button_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="next_button_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+
+				<!-- NEXT SYMBOL -->
+				<field name="@spacer" type="spacer" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" ></field>
+				<field name="@spacer" type="spacer" default="PARAM_NEXT_SYMBOL_TWEEN" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="@spacer" type="spacer" default="TWEEN_DESC" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_" description="" size="50" ></field>
+				<field name="next_symbol_time" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="next_symbol_delay" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_DELAY" description="" size="50" ></field>
+				<field name="next_symbol_x" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
+				<field name="next_symbol_y" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
+				<field name="next_symbol_width" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
+				<field name="next_symbol_height" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
+				<field name="next_symbol_rotation" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
+				<field name="next_symbol_alpha" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
+				<field name="next_symbol_tint" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
+				<field name="next_symbol_scaleX" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
+				<field name="next_symbol_scaleY" type="text" default="" label="MOD_VINAORA_CU3ER_3D_SLIDESHOW_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+	
+			</fieldset>
+		</fields>
+	</config>
 </extension>
