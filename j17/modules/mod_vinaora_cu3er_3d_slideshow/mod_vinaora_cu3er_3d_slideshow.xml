@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" method="upgrade" client="site">
+  <name>mod_vinaora_cu3er_3d_slideshow</name>
+  <authore>b</authore>
+  <creationDate>2011-07-13</creationDate>
+  <copyright>© 2011. All rights reserved.</copyright>
+  <license>GNU/GPL</license>
+  <authorEmail></authorEmail>
+  <authoreUrl></authoreUrl>
+  <version>b</version>
+  <description>EXTENSION_DESCRIPTION</description>
+  <files>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <filename module="mod_vinaora_cu3er_3d_slideshow">mod_vinaora_cu3er_3d_slideshow.php</filename>
+    <filename>mod_vinaora_cu3er_3d_slideshow.xml</filename>
+    <folder>tmpl</folder>
+  </files>
+  <languages>
+    <language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.ini</language>
+    <language tag="en-GB">language/en-GB.mod_vinaora_cu3er_3d_slideshow.sys.ini</language>
+  </languages>
+</extension>
