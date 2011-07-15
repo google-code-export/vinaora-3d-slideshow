@@ -15,7 +15,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	private var $params;
 	private var $tweenNames;
 	private var $buttonNames;
-	private var $separator;
+	private var $separator="\n";
 	
 	private function __contruct($params, $module_id){
 		$this->params = $params;
@@ -137,7 +137,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		
 		$xml = $node->asXML();
 		
-		$xml = $self::_replaceTweenName($xml);
+		$xml = $self::replaceTweenName($xml);
 
 		return $xml;
 	}
@@ -397,7 +397,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			foreach ($attbs as $value){
 				$param = $this->params->get('transition_'.$value);
-				$str = $self::getParam($param, $position);
+				$str = trim( $self::getParam($param, $position) );
 				if ( strlen($str) ){
 					$nodeL1->addAttribute($value, $str);
 					$found = true;
@@ -447,7 +447,8 @@ class modVinaoraCu3er3DSlideshowHelper
 		if(is_array($attbs)){
 
 			foreach ($attbs as $key=>$value){
-				if (trim($value) != ''){
+				$value = trim($value);
+				if (strlen($value)){
 					$node->addAttribute($key, $value);
 				}
 			}
@@ -486,7 +487,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 		$param = $this->params->get('slide_url');
 		$str = trim( $self::getParam($param, $position, $this->separator) );
-		$str = $self::validImageUrl($str);
+		$str = $self::validImageURL($str);
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('url', $str);
@@ -501,12 +502,13 @@ class modVinaoraCu3er3DSlideshowHelper
 			$param = $this->params->get('slide_link_target');
 			$attb = trim ( $self::getParam($param, $position, $this->separator) );
 			$attb = $self::validTarget($attb);
-			if ( strlen($str) ){
+			if ( strlen($attb) ){
 				$nodeL1->addAttribute('target', $attb);
 			}
 		}
 
-		if ($this->params->get('enable_description_box')){
+		$param = $this->params->get('enable_description_box');
+		if ( strlen($param) ){
 
 			$nodeL1 =& $nodeL0->addChild('description');
 
@@ -561,7 +563,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 */
 	private static function getTween($param, $type='in'){
 
-		$type = trim(strtolower($type));
+		$type = strtolower(trim($type));
 		$return = NULL;
 
 		switch($type){
@@ -600,7 +602,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			if ( ($position > count($items)) || ($position<1) ) return NULL;
 			else {
-				$return = trim($items[$position-1]);
+				$return = trim( $items[$position-1] );
 				if ( !strlen($return) ) return NULL;
 			}
 		}
@@ -612,25 +614,31 @@ class modVinaoraCu3er3DSlideshowHelper
 	 * Validate Link Target
 	 */
 	public static function validTarget($target = '_blank'){
-		$target = strtolower($target);
+		$target = strtolower(trim($target));
 		$target = "_".ltrim($target, '_');
 
 		$valid = array ('_blank', '_top', '_parent', '_self');
 		$target = in_array($target, $valid) ? $target : '_blank';
-		
+
 		return $target;
 	}
-	
+
+	/*
+	 *
+	 */
+	public static function validImageURL($str){
+		
+	}
+
 	/*
 	 * Replace TweenName from lowercase to pascalName format
 	 */
-	private static function _replaceTweenName($str){
+	private static function replaceTweenName($str){
 
 		$str = str_replace('<tweenin ', '<tweenIn ', $str);
 		$str = str_replace('<tweenout ', '<tweenOut ', $str);
 		$str = str_replace('<tweenover ', '<tweenOver ', $str);
-		
+
 		return $str;
 	}
-
 }
