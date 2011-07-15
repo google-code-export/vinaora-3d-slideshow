@@ -28,9 +28,12 @@ class modVinaoraCu3er3DSlideshowHelper
 
 		$xml = false;
 		$name = JPath::clean($name);
+
+		//Remove the Directory Separator (DS) at the begin of $name if exits
+		$name = ltrim($name, DS);
 		
 		if ( !is_file(JPATH_BASE.DS.$name) ){
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_CONFIG_NOTFOUND'));
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_CONFIG_NOTFOUND'));
 			return false;
 		}
 
@@ -46,7 +49,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			$xml = simplexml_load_file( JURI::base().JPath::clean($name, '/') );
 		}
 		else{
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_CONFIG_INVALID'));
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_CONFIG_INVALID'));
 			return false;
 		}
 
@@ -61,17 +64,21 @@ class modVinaoraCu3er3DSlideshowHelper
 
 		jimport('joomla.filesystem.file');
 		$name = JPath::clean($name);
+
+		//Remove the Directory Separator (DS) at the begin of $name if exits
+		$name = ltrim($name, DS);
+
 		$name = JPATH_BASE.DS.$name;
 
 		if ( is_writeable(dirname($name)) ){
 			if ( JFile::write($name, $this->getXML()) ) return true;
 			else{
-				JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_UNWRITABLE'));
+				JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_UNWRITABLE'));
 			}
 		}
 		else{
 			// Folder is not writeable
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_DIRECTORY_UNWRITABLE'));
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_DIRECTORY_UNWRITABLE'));
 		}
 
 		return false;
