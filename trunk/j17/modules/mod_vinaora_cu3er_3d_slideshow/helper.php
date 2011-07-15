@@ -13,19 +13,139 @@ defined('_JEXEC') or die;
 class modVinaoraCu3er3DSlideshowHelper
 {
 	private var $params;
-	private var $module_id;
 	private var $tweenNames;
 	private var $buttonNames;
+	private var $separator;
 	
-	protected __contruct(){
-		$tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");
-		$buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
+	private function __contruct($params, $module_id){
+		$this->params = $params;
+		$this->separator = "\n";
+		$this->tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");
+		$this->buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
+		
+	}
+	
+	/*
+	 * Get content of the config file
+	 */
+	public function getConfig($name){
+
+		$name = JPath::clean($name);
+		
+		if ( !is_file(JPATH_BASE.DS.$name) ) return NULL;
+
+		// Load from file if it is .xml
+		if ( strtolower(substr($name, -4, 4)) == '.xml' ){
+			$xml = simplexml_load_file( JPATH_BASE.DS.$name );
+		}
+		// Load from URL if it is .xml.php
+		else{
+			$xml = simplexml_load_file( JURI::base().JPath::clean($name, '/') );
+		}
+		
+		//TODO File exits but not valid XML
+		
+		return $xml;
+
+	}
+	
+	/*
+	 * Create the config file
+	 */
+	public function createConfig($name){
+
+		jimport('joomla.filesystem.file');
+		$name = JPath::clean($name);
+		$name = JPATH_BASE.DS.$name;
+
+		if ( is_writeable(dirname($name)) ){
+			if ( JFile::write($name, $this->getXML()) ) return true;
+			else{
+				// TODO: Write file error
+			}
+		}
+		else{
+			// TODO: Folder is not writeable
+		}
+
+		return false;
+
+	}
+	
+	/*
+	 * Create content of the config file
+	 */
+	public function getXML(){
+		$xml = '<?xml version="1.0" encoding="utf-8"?>';
+		
+		// Create Element - <cu3er>
+		$node = new SimpleXMLElement($xml.'<cu3er />');
+		
+		// Create Element - <cu3er>.<settings>
+		$nodeL1 =& $node->addChild('settings');
+		
+		// Create Element - <cu3er>.<settings>.<general>
+		$nodeL2 =& $this->_createGeneral($nodeL1);
+
+		// Create Element - <cu3er>.<settings>.<debug>
+		if ($this->params->get('enable_debug')){
+			$nodeL2 =& $this->_createDebug($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<auto_play>
+		if ($this->params->get('enable_auto_play')){
+			$nodeL2 =& $this->_createAutoPlay($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<pre_button>
+		if ($this->params->get('enable_prev_button')){
+			$nodeL2 =& $this->_createPreviousButton($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<pre_symbol>
+		if ($this->params->get('enable_prev_symbol')){
+			$nodeL2 =& $this->_createPreviousSymbol($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<next_button>
+		if ($this->params->get('enable_next_button')){
+			$nodeL2 =& $this->_createNextButton($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<next_symbol>
+		if ($this->params->get('enable_next_symbol')){
+			$nodeL2 =& $this->_createNextSymbol($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<preloader>
+		if ($this->params->get('enable_preloader')){
+			$nodeL2 =& $this->_createPreloader($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<description>
+		if ($this->params->get('enable_description_box')){
+			$nodeL2 =& $this->_createDescriptionBox($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<settings>.<transitions>
+		if ($this->params->get('transition_type') == 'first'){
+			$nodeL2 =& $this->_createTransitions($nodeL1);
+		}
+
+		// Create Element - <cu3er>.<slides>
+		$nodeL2 =& $this->_createSlides($node);
+		
+		$xml = $node->asXML();
+		
+		$xml = $self::_replaceTweenName($xml);
+
+		return $xml;
 	}
 	
 	/*
 	 * Create General Settings
 	 */
-	protected function _createGeneral(&$node){
+	private function _createGeneral(&$node){
 		
 		$general = array();
 		
@@ -39,7 +159,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$nodeL1 =& $node->addChild('general');
 
 		// Create Attributes of <cu3er>.<settings>.<general>
-		$this->addAttributes($nodeL1, $general);
+		$self::addAttributes($nodeL1, $general);
 
 		return $node;
 	}
@@ -47,7 +167,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Debug Settings
 	 */
-	protected function _createDebug(&$node){
+	private function _createDebug(&$node){
 		
 		$debug = array();
 
@@ -58,7 +178,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$nodeL1 =& $node->addChild('debug');
 
 		// Create Attributes of <cu3er>.<settings>.<debug>
-		$this->addAttributes($nodeL1, $debug);
+		$self::addAttributes($nodeL1, $debug);
 
 		return $node;
 	}
@@ -66,7 +186,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Auto-Play Settings
 	 */
-	protected function _createAutoPlay(&$node){
+	private function _createAutoPlay(&$node){
 
 		$name = "auto_play";
 
@@ -76,9 +196,9 @@ class modVinaoraCu3er3DSlideshowHelper
 				"symbol"	=> $this->params->get('auto_play_symbol', 'linear'),
 				"time"		=> $this->params->get('auto_play_time_defaults', 5)
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<auto_play>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -89,7 +209,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Previous Button Settings
 	 */
-	protected function _createPreviousButton(&$node){
+	private function _createPreviousButton(&$node){
 
 		$name = "prev_button";
 
@@ -98,9 +218,9 @@ class modVinaoraCu3er3DSlideshowHelper
 			array(
 				"round_corners" => $this->params->get('prev_button_round_corners', '0, 0, 0, 0')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<prev_button>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -111,7 +231,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Previous Symbol Settings
 	 */
-	protected function _createPreviousSymbol(&$node){
+	private function _createPreviousSymbol(&$node){
 
 		$name = 'prev_symbol';
 
@@ -120,9 +240,9 @@ class modVinaoraCu3er3DSlideshowHelper
 			array(
 				"type" => $this->params->get('prev_symbol_type', '1')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<prev_symbol>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -133,7 +253,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Next Button Settings
 	 */
-	protected function _createNextButton(&$node){
+	private function _createNextButton(&$node){
 
 		$name = "next_button";
 
@@ -142,9 +262,9 @@ class modVinaoraCu3er3DSlideshowHelper
 			array(
 				"round_corners" => $this->params->get('next_button_round_corners', '0, 0, 0, 0')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<next_button>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -155,7 +275,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Next Symbol Settings
 	 */
-	protected function _createNextSymbol(&$node){
+	private function _createNextSymbol(&$node){
 
 		$name = "next_symbol";
 
@@ -164,9 +284,9 @@ class modVinaoraCu3er3DSlideshowHelper
 			array(
 				"type" => $this->params->get('next_symbol_type', '1')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<next_symbol>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -177,7 +297,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Preloader Settings
 	 */
-	protected function _createPreloader(&$node){
+	private function _createPreloader(&$node){
 
 		$name = 'preloader';
 
@@ -186,8 +306,9 @@ class modVinaoraCu3er3DSlideshowHelper
 			array(
 				"symbol" => $this->params->get('preloader_symbol', 'linear')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		// $attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<preloader>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -198,7 +319,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Description Box Settings
 	 */
-	protected function _createDescriptionBox(&$node){
+	private function _createDescriptionBox(&$node){
 
 		$name = "description";
 
@@ -221,9 +342,9 @@ class modVinaoraCu3er3DSlideshowHelper
 				"paragraph_text_leading" 		=> $this->params->get('description_paragraph_text_leading', '0'),
 				"paragraph_text_letterSpacing" 	=> $this->params->get('description_paragraph_text_letterSpacing', '0')
 			);
-		$attbs["tweenIn"]	=& $this->getTweenArray($params, 'in', $name);
-		$attbs["tweenOut"]	=& $this->getTweenArray($params, 'out', $name);
-		$attbs["tweenOver"]	=& $this->getTweenArray($params, 'over', $name);
+		$attbs["tweenIn"]	=& $this->getTweenArray($name, 'in');
+		$attbs["tweenOut"]	=& $this->getTweenArray($name, 'out');
+		$attbs["tweenOver"]	=& $this->getTweenArray($name, 'over');
 
 		// Create Element - <cu3er>.<settings>.<description>
 		$nodeL1 = $this->createButton($node, $name, $this->tweenNames, $attbs);
@@ -234,11 +355,9 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Transitions Settings
 	 */
-	protected function _createTransitions(&$node){
+	private function _createTransitions(&$node){
 		
-		$params = $this->$params;
-		
-		$node =& $this->createTransition($node, $params, 0);
+		$node =& $this->_createTransition($node, 0);
 		
 		return $node;
 	}
@@ -246,7 +365,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Element <transiton> for slide
 	 */
-	protected function _createTransition(&$node, $position=1){
+	private function _createTransition(&$node, $position=1){
 
 		if ($position){
 			$nodeL1 = $node->addChild('transition');
@@ -278,7 +397,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			foreach ($attbs as $value){
 				$param = $this->params->get('transition_'.$value);
-				$str = $this->getParam($param, $position);
+				$str = $self::getParam($param, $position);
 				if ( strlen($str) ){
 					$nodeL1->addAttribute($value, $str);
 					$found = true;
@@ -297,7 +416,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 * Create A Button.
 	 * $name: Previous Button, Next Button, Previous Symbol, Next Symbol, Auto Load, Preloader, Description Box
 	 */
-	protected function createButton(&$node, $name, $childNames, $attbs){
+	private function createButton(&$node, $name, $childNames, $attbs){
 
 		if (!in_array($name, $this->buttonNames)) return;
 
@@ -312,7 +431,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			if (array_key_exists($child, $attbs)){
 				$attb = $attbs[$child];
 				if (isset($attb)){
-					$this->addAttributes($nodeL2, $attb);
+					$self::addAttributes($nodeL2, $attb);
 				}
 			}
 		}
@@ -323,7 +442,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Add the attributes to a node
 	 */
-	protected function addAttributes(&$node, $attbs){
+	public static function addAttributes(&$node, $attbs){
 
 		if(is_array($attbs)){
 
@@ -340,16 +459,16 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Element <slides>
 	 */
-	protected function _createSlides(&$node){
+	private function _createSlides(&$node){
 
 		$nodeL1 =& $node->addChild('Slides');
 
 		$slides = explode("\n", $this->params->get('slide_url'));
 
 		for($i=1; $i<=count($slides); $i++){
-			$nodeL2 = $this->createSlide($nodeL1, $i);
+			$nodeL2 = $this->_createSlide($nodeL1, $i);
 			if ($this->params->get('transition_type') != 'none'){
-				$nodeL2 = $this->createTransition($nodeL1, $i);
+				$nodeL2 = $this->_createTransition($nodeL1, $i);
 			}
 		}
 
@@ -360,28 +479,28 @@ class modVinaoraCu3er3DSlideshowHelper
 	 * Create Element <slide>
 	 * Default: Return the First Slide
 	 */
-	function createSlide(&$node, $position=1){
-		$separator = "\n";
+	private function _createSlide(&$node, $position=1){
+
 		$nodeL0 =& $node->addChild('slide');
 		$found = false;
 
 		$param = $this->params->get('slide_url');
-		$str = trim( $this->getParam($param, $position, $separator) );
-		$str = $this->validImageUrl($str);
+		$str = trim( $self::getParam($param, $position, $this->separator) );
+		$str = $self::validImageUrl($str);
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('url', $str);
 		}
 
 		$param = $this->params->get('slide_link');
-		$str = trim ( $this->getParam($param, $position, $separator) );
+		$str = trim ( $self::getParam($param, $position, $this->separator) );
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('link', $str);
 
 			$param = $this->params->get('slide_link_target');
-			$attb = trim ( $this->getParam($param, $position, $separator) );
-			$attb = $this->validTarget($attb);
+			$attb = trim ( $self::getParam($param, $position, $this->separator) );
+			$attb = $self::validTarget($attb);
 			if ( strlen($str) ){
 				$nodeL1->addAttribute('target', $attb);
 			}
@@ -392,28 +511,28 @@ class modVinaoraCu3er3DSlideshowHelper
 			$nodeL1 =& $nodeL0->addChild('description');
 
 			$param = $this->params->get('slide_description_heading');
-			$str = trim( $this->getParam($param, $position, $separator) );
+			$str = trim( $self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('heading', $str);
 			}
 
 			$param = $this->params->get('slide_description_paragraph');
-			$str = trim( $this->getParam($param, $position, $separator) );
+			$str = trim( $self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('paragraph', $str);
 			}
 
 			$param = $this->params->get('slide_description_link');
-			$str = trim ( $this->getParam($param, $position, $separator) );
+			$str = trim ( $self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('link', $str);
 
 				$param = $this->params->get('slide_description_link_target');
-				$attb = trim ( $this->getParam($param, $position, $separator) );
-				$attb = $this->validTarget($attb);
+				$attb = trim ( $self::getParam($param, $position, $this->separator) );
+				$attb = $self::validTarget($attb);
 				if ( strlen($attb) ){
 					$nodeL2->addAttribute('target', $attb);
 				}
@@ -425,10 +544,22 @@ class modVinaoraCu3er3DSlideshowHelper
 		return $node;
 	}
 	
+	private function getTweenArray($name, $type){
+		$tween = array();
+		
+		$keys = array("time", "delay", "x", "y", "width", "height", "rotation", "alpha", "tint", "scaleX", "scaleY");
+
+		foreach ($keys as $key){
+			$tween[$key] = $self::getTween($this->params->get($name."_".$key), $type);
+		}
+
+		return $tween;
+	}
+
 	/*
 	 * GetTween by Type: In/TweenIn, Out/TweenOut, Over/TweenOver
 	 */
-	protected function getTween($param, $type='in'){
+	private static function getTween($param, $type='in'){
 
 		$type = trim(strtolower($type));
 		$return = NULL;
@@ -437,17 +568,17 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			case 'in':
 			case 'tweenin':
-				$return = $this->getParam($param, 1);
+				$return = $self::getParam($param, 1);
 				break;
 
 			case 'out':
 			case 'tweenout':
-				$return = $this->getParam($param, 2);
+				$return = $self::getParam($param, 2);
 				break;
 
 			case 'over':
 			case 'tweenover':
-				$return = $this->getParam($param, 3);
+				$return = $self::getParam($param, 3);
 				break;
 		}
 
@@ -456,34 +587,50 @@ class modVinaoraCu3er3DSlideshowHelper
 	}
 	
 	/*
-	 * Get a Parameter in a String Parameters which are seperated with a specify symbol (default: vertical bar '|').
+	 * Get a Parameter in a String Parameters which are seperated with a separator symbol (default: vertical bar '|').
 	 * Example: Parameters = "value1 | value2 | value3". Return "value2" if positon = 2
 	 */
-	public function getParam($param, $position=1, $symbol='|'){
+	public static function getParam($param, $position=1, $separator='|'){
 
 		$return = NULL;
+		
+		if(!empty($param)){
 
-		$items = explode($symbol, $param);
+			$items = explode($separator, $param);
 
-		if ( ($position > count($items)) || ($position<1) ) return NULL;
-		else {
-			$return = trim($items[$position-1]);
-			if ( !strlen($return) ) return NULL;
+			if ( ($position > count($items)) || ($position<1) ) return NULL;
+			else {
+				$return = trim($items[$position-1]);
+				if ( !strlen($return) ) return NULL;
+			}
 		}
 
 		return $return;
 	}
-	
-	protected function getTweenArray($type, $name){
-		$tween = array();
+
+	/*
+	 * Validate Link Target
+	 */
+	public static function validTarget($target = '_blank'){
+		$target = strtolower($target);
+		$target = "_".ltrim($target, '_');
+
+		$valid = array ('_blank', '_top', '_parent', '_self');
+		$target = in_array($target, $valid) ? $target : '_blank';
 		
-		$keys = array("time", "delay", "x", "y", "width", "height", "rotation", "alpha", "tint", "scaleX", "scaleY");
+		return $target;
+	}
+	
+	/*
+	 * Replace TweenName from lowercase to pascalName format
+	 */
+	private static function _replaceTweenName($str){
 
-		foreach ($keys as $key){
-			$tween[$key] = $this->getTween($this->params->get($name."_".$key), $type);
-		}
-
-		return $tween;
+		$str = str_replace('<tweenin ', '<tweenIn ', $str);
+		$str = str_replace('<tweenout ', '<tweenOut ', $str);
+		$str = str_replace('<tweenover ', '<tweenOver ', $str);
+		
+		return $str;
 	}
 
 }
