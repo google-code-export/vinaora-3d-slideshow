@@ -13,16 +13,12 @@ defined('_JEXEC') or die;
 class modVinaoraCu3er3DSlideshowHelper
 {
 	private var $params;
-	private var $tweenNames;
-	private var $buttonNames;
-	private var $separator="\n";
+	private var $separator = "\n";
+	private var $tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");;
+	private var $buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
 	
-	private function __contruct($params, $module_id){
-		$this->params = $params;
-		$this->separator = "\n";
-		$this->tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");
-		$this->buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
-		
+	private function __contruct($params){
+		$this->params = $params;		
 	}
 	
 	/*
@@ -30,21 +26,30 @@ class modVinaoraCu3er3DSlideshowHelper
 	 */
 	public function getConfig($name){
 
+		$xml = false;
 		$name = JPath::clean($name);
 		
-		if ( !is_file(JPATH_BASE.DS.$name) ) return NULL;
+		if ( !is_file(JPATH_BASE.DS.$name) ){
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_CONFIG_NOTFOUND'));
+			return false;
+		}
 
+		// $ext = pathinfo($filename, PATHINFO_EXTENSION);
+		$ext = strtolower(substr($name, -4, 4));
+		
 		// Load from file if it is .xml
-		if ( strtolower(substr($name, -4, 4)) == '.xml' ){
+		if ( $ext == '.xml' ){
 			$xml = simplexml_load_file( JPATH_BASE.DS.$name );
 		}
 		// Load from URL if it is .xml.php
-		else{
+		elseif ( $ext == '.xml.php' ) {
 			$xml = simplexml_load_file( JURI::base().JPath::clean($name, '/') );
 		}
-		
-		//TODO File exits but not valid XML
-		
+		else{
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_CONFIG_INVALID'));
+			return false;
+		}
+
 		return $xml;
 
 	}
@@ -61,11 +66,12 @@ class modVinaoraCu3er3DSlideshowHelper
 		if ( is_writeable(dirname($name)) ){
 			if ( JFile::write($name, $this->getXML()) ) return true;
 			else{
-				// TODO: Write file error
+				JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_FILE_UNWRITABLE'));
 			}
 		}
 		else{
-			// TODO: Folder is not writeable
+			// Folder is not writeable
+			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_DIRECTORY_UNWRITABLE'));
 		}
 
 		return false;
@@ -233,7 +239,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 */
 	private function _createPreviousSymbol(&$node){
 
-		$name = 'prev_symbol';
+		$name = "prev_symbol";
 
 		$attbs = array();
 		$attbs["defaults"]  = 
@@ -299,7 +305,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 */
 	private function _createPreloader(&$node){
 
-		$name = 'preloader';
+		$name = "preloader";
 
 		$attbs = array();
 		$attbs["defaults"]  = 
@@ -404,8 +410,7 @@ class modVinaoraCu3er3DSlideshowHelper
 				}
 			}
 		}
-		
-		// Check $node->data ???
+
 		// Remove Child if have no attributes
 		if (!$found) $node->removeChild($nodeL1);
 
