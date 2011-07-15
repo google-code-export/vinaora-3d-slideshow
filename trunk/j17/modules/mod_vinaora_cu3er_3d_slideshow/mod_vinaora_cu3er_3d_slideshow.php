@@ -20,7 +20,7 @@ $config_name		= $params->get( 'config_code' );
 $config_name		= ($config_name) ? $config_name : "demo1.xml.php";
 $config_name		= ($config_custom=="-1") ? $config_name : $config_custom;
 
-$configHelper = new modVinaoraCu3er3DSlideshowHelper($params, $module_id);
+$configHelper = new modVinaoraCu3er3DSlideshowHelper($params);
 
 // Check Config file (.xml) exits and valid XML
 $config_name = 'media/mod_vinaora_cu3er_3d_slideshow/config/'.$config_name;
