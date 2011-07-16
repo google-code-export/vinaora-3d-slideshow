@@ -33,10 +33,22 @@
 	<config>
 		<fields name="params" addfieldpath="/modules/mod_vinaora_cu3er_3d_slideshow/fields" >
 			<fieldset name="basic">
-				<param name="is_installed" type="radio" default="0" label="Is module installed?" description="Only use this if you know the consequences! Click No to recreate database">
-					<option value="0">No</option>
-					<option value="1">Yes</option>
-				</param>
+				<field name="config_code" type="lastedit" label="CONFIG_CODE" description="DESC_CONFIG_CODE" default="" size="50" ></field>
+				<field name="config_custom" type="filelist" default="-1" label="CONFIG_CUSTOM" description="DESC_CONFIG_CUSTOM" directory="media/mod_vinaora_cu3er_3d_slideshow/config" filter="\.xml\.php$" exclude="" stripext="" hide_none="0" hide_default="1" ></field>
+
+				<field name="slide_panel_width" type="text" default="900" label="MOD_VC3S_FIELD_SLIDE_PANEL_WIDTH" description="MOD_VC3S_FIELD_SLIDE_PANEL_WIDTH_DESC" ></field>
+				<field name="slide_panel_height" type="text" default="380" label="MOD_VC3S_FIELD_SLIDE_PANEL_HEIGHT" description="MOD_VC3S_FIELD_SLIDE_PANEL_HEIGHT_DESC" ></field>
+				<field name="slide_panel_horizontal_align" type="list" default="left" label="MOD_VC3S_FIELD_SLIDE_PANEL_HORIZONTAL_ALIGN" description="MOD_VC3S_FIELD_SLIDE_PANEL_HORIZONTAL_ALIGN_DESC" >
+					<option value="left">MOD_VC3S_FIELD_OPTION_LEFT</option>
+					<option value="center">MOD_VC3S_FIELD_OPTION_CENTER</option>
+					<option value="right">MOD_VC3S_FIELD_OPTION_RIGHT</option>
+				</field>
+				<field name="slide_panel_vertical_align" type="list" default="top" label="MOD_VC3S_FIELD_SLIDE_PANEL_VERTICAL_ALIGN" description="MOD_VC3S_FIELD_SLIDE_PANEL_VERTICAL_ALIGN_DESC" >
+					<option value="top">MOD_VC3S_FIELD_OPTION_TOP</option>
+					<option value="center">MOD_VC3S_FIELD_OPTION_CENTER</option>
+					<option value="bottom">MOD_VC3S_FIELD_OPTION_BOTTOM</option>
+				</field>
+				<field name="ui_visibility_time" type="text" default="3" label="MOD_VC3S_FIELD_SLIDE_UI_VISIBILITY_TIME" description="MOD_VC3S_FIELD_SLIDE_UI_VISIBILITY_TIME_DESC" ></field>
 				
 				<!-- SLIDE -->
 				<field name="slide_dir" type="folderlist" default="0" label="MOD_VC3S_FIELD_SLIDE_DIRECTORY" description="MOD_VC3S_FIELD_SLIDE_DIRECTORY_DESC" directory="images" filter="" exclude="" hide_none="0" hide_default="0" ></field>
@@ -112,8 +124,8 @@
 					<option value="0">JNO</option>
 				</field>
 				<field name="auto_play_symbol" type="list" default="circular" label="MOD_VC3S_FIELD_AUTO_PLAY_SYMBOL" description="MOD_VC3S_FIELD_AUTO_PLAY_SYMBOL_DESC" >
-					<option value="linear">MOD_VC3S_FIELD_OPTION_SYMBOL_LINEAR</option>
-					<option value="circular">MOD_VC3S_FIELD_OPTION_SYMBOL_CIRCULAR</option>
+					<option value="linear">MOD_VC3S_OPTION_SYMBOL_LINEAR</option>
+					<option value="circular">MOD_VC3S_OPTION_SYMBOL_CIRCULAR</option>
 				</field>
 				<field name="auto_play_time_defaults" type="text" default="5" label="MOD_VC3S_FIELD_AUTO_PLAY_TIME_DEFAULTS" description="MOD_VC3S_FIELD_AUTO_PLAY_TIME_DEFAULTS_DESC" ></field>
 
@@ -123,8 +135,8 @@
 					<option value="0">JNO</option>
 				</field>
 				<field name="preloader_symbol" type="list" default="circular" label="MOD_VC3S_FIELD_PRELOADER_SYMBOL" description="MOD_VC3S_FIELD_PRELOADER_SYMBOL_DESC" >
-					<option value="linear">MOD_VC3S_FIELD_OPTION_SYMBOL_LINEAR</option>
-					<option value="circular">MOD_VC3S_FIELD_OPTION_SYMBOL_CIRCULAR</option>
+					<option value="linear">MOD_VC3S_OPTION_SYMBOL_LINEAR</option>
+					<option value="circular">MOD_VC3S_OPTION_SYMBOL_CIRCULAR</option>
 				</field>
 
 				<!-- PREVIOUS BUTTON -->
@@ -188,15 +200,24 @@
 				<field name="debug_x" type="text" default="5" label="MOD_VC3S_FIELD_DEBUG_X" description="MOD_VC3S_FIELD_DEBUG_X_DESC" ></field>
 				<field name="debug_y" type="text" default="5" label="MOD_VC3S_FIELD_DEBUG_Y" description="MOD_VC3S_FIELD_DEBUG_Y_DESC" ></field>
 				
-				<!-- PERFORMANCE -->
-				<field name="swfobject" type="list" default="i2.2" label="MOD_VC3S_FIELD_SWFOBJECT" description="MOD_VC3S_FIELD_SWFOBJECT_DESC" >
-					<option value="0">SWFOBJECT_NONE_SELECTED</option>
-					<option value="i2.0">MOD_VC3S_OPTION_SWFOBJECT_INTERNAL20</option>
-					<option value="i2.1">MOD_VC3S_OPTION_SWFOBJECT_INTERNAL21</option>
-					<option value="i2.2">MOD_VC3S_OPTION_SWFOBJECT_INTERNAL22</option>
-					<option value="e2.1">MOD_VC3S_OPTION_SWFOBJECT_EXTERNAL21</option>
-					<option value="e2.2">MOD_VC3S_OPTION_SWFOBJECT_EXTERNAL22</option>
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" size="40" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
 				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode" type="hidden" default="static">
+					<option value="static"></option>
+				</field>
+				
+				<field name="swfobject_source" type="list" default="local" label="MOD_VC3S_FIELD_SWFOBJECT_SOURCE" description="MOD_VC3S_FIELD_SWFOBJECT_SOURCE_DESC">
+					<option value="local">MOD_VC3S_OPTION_SWFOBJECT_SOURCE_LOCAL</option>
+					<option value="google">MOD_VC3S_OPTION_SWFOBJECT_SOURCE_GOOGLE</option>
+					<option value="">JNONE</option>
+				</field>
+				<field name="swfobject_version" type="folderlist" default="2.2" directory="/media/mod_vinaora_cu3er_3d_slideshow/js/swfobject/" filter="" exclude="" stripext="" hide_none="1" hide_default="1" label="MOD_VC3S_FIELD_SWFOBJECT" description="MOD_VC3S_FIELD_SWFOBJECT_DESC" />
+
 			</fieldset>
 			<fieldset name="advanced">
 

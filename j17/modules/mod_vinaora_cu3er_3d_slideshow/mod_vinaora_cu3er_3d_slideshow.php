@@ -28,8 +28,8 @@ $config = $configHelper->getConfig($config_name);
 
 // Config File exist and valid
 if ( $config ){
-	$width  = $config->settings->general["slide_panel_width"]);
-	$height  = $config->settings->general["slide_panel_height"]);
+	$width  = $config->settings->general["slide_panel_width"];
+	$height  = $config->settings->general["slide_panel_height"];
 	
 }
 // Config File not exist

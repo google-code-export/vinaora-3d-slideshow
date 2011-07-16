@@ -12,13 +12,15 @@ defined('_JEXEC') or die;
 
 class modVinaoraCu3er3DSlideshowHelper
 {
-	private var $params;
-	private var $separator = "\n";
-	private var $tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");;
-	private var $buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
-	
-	private function __contruct($params){
-		$this->params = $params;		
+	private $params;
+	private $separator = "\n";
+	private $tweenNames = array("defaults", "tweenIn", "tweenOut", "tweenOver");
+	private $buttonNames = array("prev_button", "next_button", "prev_symbol", "next_symbol", "auto_play", "preloader", "description");
+
+	function __construct(&$params){
+		$this->params = $params;
+
+		// var_dump($this->params);
 	}
 	
 	/*
@@ -150,7 +152,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		
 		$xml = $node->asXML();
 		
-		$xml = $self::replaceTweenName($xml);
+		$xml = self::replaceTweenName($xml);
 
 		return $xml;
 	}
@@ -172,7 +174,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$nodeL1 =& $node->addChild('general');
 
 		// Create Attributes of <cu3er>.<settings>.<general>
-		$self::addAttributes($nodeL1, $general);
+		self::addAttributes($nodeL1, $general);
 
 		return $node;
 	}
@@ -191,7 +193,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$nodeL1 =& $node->addChild('debug');
 
 		// Create Attributes of <cu3er>.<settings>.<debug>
-		$self::addAttributes($nodeL1, $debug);
+		self::addAttributes($nodeL1, $debug);
 
 		return $node;
 	}
@@ -410,7 +412,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			foreach ($attbs as $value){
 				$param = $this->params->get('transition_'.$value);
-				$str = trim( $self::getParam($param, $position) );
+				$str = trim( self::getParam($param, $position) );
 				if ( strlen($str) ){
 					$nodeL1->addAttribute($value, $str);
 					$found = true;
@@ -419,7 +421,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		}
 
 		// Remove Child if have no attributes
-		if (!$found) $node->removeChild($nodeL1);
+		// if (!$found) $node->removeChild($nodeL1);
 
 		return $node;
 	}
@@ -443,7 +445,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			if (array_key_exists($child, $attbs)){
 				$attb = $attbs[$child];
 				if (isset($attb)){
-					$self::addAttributes($nodeL2, $attb);
+					self::addAttributes($nodeL2, $attb);
 				}
 			}
 		}
@@ -498,22 +500,22 @@ class modVinaoraCu3er3DSlideshowHelper
 		$found = false;
 
 		$param = $this->params->get('slide_url');
-		$str = trim( $self::getParam($param, $position, $this->separator) );
-		$str = $self::validImageURL($str);
+		$str = trim( self::getParam($param, $position, $this->separator) );
+		$str = self::validImageURL($str);
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('url', $str);
 		}
 
 		$param = $this->params->get('slide_link');
-		$str = trim ( $self::getParam($param, $position, $this->separator) );
+		$str = trim ( self::getParam($param, $position, $this->separator) );
 		if ( strlen($str) ){
 			$found = true;
 			$nodeL1 =& $nodeL0->addChild('link', $str);
 
 			$param = $this->params->get('slide_link_target');
-			$attb = trim ( $self::getParam($param, $position, $this->separator) );
-			$attb = $self::validTarget($attb);
+			$attb = trim ( self::getParam($param, $position, $this->separator) );
+			$attb = self::validTarget($attb);
 			if ( strlen($attb) ){
 				$nodeL1->addAttribute('target', $attb);
 			}
@@ -525,35 +527,35 @@ class modVinaoraCu3er3DSlideshowHelper
 			$nodeL1 =& $nodeL0->addChild('description');
 
 			$param = $this->params->get('slide_description_heading');
-			$str = trim( $self::getParam($param, $position, $this->separator) );
+			$str = trim( self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('heading', $str);
 			}
 
 			$param = $this->params->get('slide_description_paragraph');
-			$str = trim( $self::getParam($param, $position, $this->separator) );
+			$str = trim( self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('paragraph', $str);
 			}
 
 			$param = $this->params->get('slide_description_link');
-			$str = trim ( $self::getParam($param, $position, $this->separator) );
+			$str = trim ( self::getParam($param, $position, $this->separator) );
 			if ( strlen($str) ){
 				$found = true;
 				$nodeL2 =& $nodeL1->addChild('link', $str);
 
 				$param = $this->params->get('slide_description_link_target');
-				$attb = trim ( $self::getParam($param, $position, $this->separator) );
-				$attb = $self::validTarget($attb);
+				$attb = trim ( self::getParam($param, $position, $this->separator) );
+				$attb = self::validTarget($attb);
 				if ( strlen($attb) ){
 					$nodeL2->addAttribute('target', $attb);
 				}
 			}
 		}
 
-		if (!$found) $node->removeChild($nodeL0);
+		// if (!$found) $node->removeChild($nodeL0);
 
 		return $node;
 	}
@@ -564,7 +566,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$keys = array("time", "delay", "x", "y", "width", "height", "rotation", "alpha", "tint", "scaleX", "scaleY");
 
 		foreach ($keys as $key){
-			$tween[$key] = $self::getTween($this->params->get($name."_".$key), $type);
+			$tween[$key] = self::getTween($this->params->get($name."_".$key), $type);
 		}
 
 		return $tween;
@@ -582,17 +584,17 @@ class modVinaoraCu3er3DSlideshowHelper
 
 			case 'in':
 			case 'tweenin':
-				$return = $self::getParam($param, 1);
+				$return = self::getParam($param, 1);
 				break;
 
 			case 'out':
 			case 'tweenout':
-				$return = $self::getParam($param, 2);
+				$return = self::getParam($param, 2);
 				break;
 
 			case 'over':
 			case 'tweenover':
-				$return = $self::getParam($param, 3);
+				$return = self::getParam($param, 3);
 				break;
 		}
 
@@ -653,4 +655,23 @@ class modVinaoraCu3er3DSlideshowHelper
 
 		return $str;
 	}
+
+	/*
+	 * Add SWFObject Library to <head> tag
+	 */
+	public static function addSWFObject($source='local', $version='2.2'){
+		
+		if($source == 'local'){
+			JHTML::script("media/mod_vinaora_cu3er_3d_slideshow/js/swfobject/$version/swfobject.min.js");
+			return true;
+		}
+		
+		if($source == 'google'){
+			JHTML::script("https://ajax.googleapis.com/ajax/libs/swfobject/$version/swfobject.min.js");
+			return true;
+		}
+		
+		return false;
+
+	}	
 }
