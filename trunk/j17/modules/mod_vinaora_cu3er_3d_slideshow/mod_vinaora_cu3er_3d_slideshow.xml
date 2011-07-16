@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="1.7.0" method="upgrade" client="site">
-	<name>Vinaora C3er 3D Slideshow</name>
+	<name>Vinaora Cu3er 3D Slideshow</name>
 	<author>VINAORA</author>
 	<creationDate>2011-07-13</creationDate>
 	<copyright>Copyright (C) 2010-2011 VINAORA. All rights reserved.</copyright>
@@ -108,12 +108,12 @@
 
 				<!-- AUTO PLAY -->
 				<field name="enable_auto_play" type="radio" default="1" label="MOD_VC3S_FIELD_ENABLE_AUTO_PLAY" description="MOD_VC3S_FIELD_ENABLE_AUTO_PLAY_DESC" >
-					<option value="1">JES</option>
+					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
 				<field name="auto_play_symbol" type="list" default="circular" label="MOD_VC3S_FIELD_AUTO_PLAY_SYMBOL" description="MOD_VC3S_FIELD_AUTO_PLAY_SYMBOL_DESC" >
-					<option value="linear">SYMBOL_LINEAR</option>
-					<option value="circular">SYMBOL_CIRCULAR</option>
+					<option value="linear">MOD_VC3S_FIELD_OPTION_SYMBOL_LINEAR</option>
+					<option value="circular">MOD_VC3S_FIELD_OPTION_SYMBOL_CIRCULAR</option>
 				</field>
 				<field name="auto_play_time_defaults" type="text" default="5" label="MOD_VC3S_FIELD_AUTO_PLAY_TIME_DEFAULTS" description="MOD_VC3S_FIELD_AUTO_PLAY_TIME_DEFAULTS_DESC" ></field>
 
@@ -123,8 +123,8 @@
 					<option value="0">JNO</option>
 				</field>
 				<field name="preloader_symbol" type="list" default="circular" label="MOD_VC3S_FIELD_PRELOADER_SYMBOL" description="MOD_VC3S_FIELD_PRELOADER_SYMBOL_DESC" >
-					<option value="linear">SYMBOL_LINEAR</option>
-					<option value="circular">SYMBOL_CIRCULAR</option>
+					<option value="linear">MOD_VC3S_FIELD_OPTION_SYMBOL_LINEAR</option>
+					<option value="circular">MOD_VC3S_FIELD_OPTION_SYMBOL_CIRCULAR</option>
 				</field>
 
 				<!-- PREVIOUS BUTTON -->
@@ -201,95 +201,95 @@
 			<fieldset name="advanced">
 
 				<!-- DESCRIPTION BOX -->
-				<field name="description_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
-				<field name="description_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
-				<field name="description_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="description_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="description_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="description_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="description_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="description_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="description_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="description_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="description_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="description_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
+				<field name="description_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="MOD_VC3S_FIELD_TWEEN_DELAY_DESC" size="50" ></field>
+				<field name="description_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="description_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="description_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="description_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="description_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="description_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="description_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="description_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="description_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- AUTO PLAY -->
-				<field name="auto_play_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
-				<field name="auto_play_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
-				<field name="auto_play_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="auto_play_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="auto_play_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="auto_play_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="auto_play_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="auto_play_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="auto_play_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="auto_play_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="auto_play_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="auto_play_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
+				<field name="auto_play_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="MOD_VC3S_FIELD_TWEEN_DELAY_DESC" size="50" ></field>
+				<field name="auto_play_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="auto_play_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="auto_play_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="auto_play_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="auto_play_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="auto_play_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="auto_play_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="auto_play_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="auto_play_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- PRELOADER -->
-				<field name="preloader_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="preloader_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
 				<field name="preloader_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="" size="50" ></field>
-				<field name="preloader_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="preloader_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="preloader_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="preloader_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="preloader_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="preloader_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="preloader_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="preloader_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="preloader_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="preloader_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="preloader_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="preloader_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="preloader_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="preloader_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="preloader_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="preloader_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="preloader_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="preloader_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- PREVIOUS BUTTON -->
-				<field name="prev_button_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
-				<field name="prev_button_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
-				<field name="prev_button_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="prev_button_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="prev_button_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="prev_button_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="prev_button_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="prev_button_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="prev_button_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="prev_button_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="prev_button_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="prev_button_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
+				<field name="prev_button_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="MOD_VC3S_FIELD_TWEEN_DELAY_DESC" size="50" ></field>
+				<field name="prev_button_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="prev_button_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="prev_button_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="prev_button_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="prev_button_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="prev_button_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="prev_button_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="prev_button_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="prev_button_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- PREVIOUS SYMBOL -->
-				<field name="prev_symbol_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
-				<field name="prev_symbol_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
-				<field name="prev_symbol_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="prev_symbol_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="prev_symbol_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="prev_symbol_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="prev_symbol_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="prev_symbol_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="prev_symbol_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="prev_symbol_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="prev_symbol_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="prev_symbol_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
+				<field name="prev_symbol_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="MOD_VC3S_FIELD_TWEEN_DELAY_DESC" size="50" ></field>
+				<field name="prev_symbol_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="prev_symbol_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="prev_symbol_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="prev_symbol_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="prev_symbol_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="prev_symbol_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="prev_symbol_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="prev_symbol_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="prev_symbol_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- NEXT BUTTON -->
-				<field name="next_button_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
-				<field name="next_button_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="DESC_TWEEN_DELAY" size="50" ></field>
-				<field name="next_button_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="next_button_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="next_button_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="next_button_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="next_button_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="next_button_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="next_button_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="next_button_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="next_button_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="next_button_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
+				<field name="next_button_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="MOD_VC3S_FIELD_TWEEN_DELAY_DESC" size="50" ></field>
+				<field name="next_button_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="next_button_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="next_button_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="next_button_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="next_button_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="next_button_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="next_button_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="next_button_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="next_button_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 
 				<!-- NEXT SYMBOL -->
-				<field name="next_symbol_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="DESC_TWEEN_TIME" size="50" ></field>
+				<field name="next_symbol_time" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TIME" description="MOD_VC3S_FIELD_TWEEN_TIME_DESC" size="50" ></field>
 				<field name="next_symbol_delay" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_DELAY" description="" size="50" ></field>
-				<field name="next_symbol_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="DESC_TWEEN_X" size="50" ></field>
-				<field name="next_symbol_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="DESC_TWEEN_Y" size="50" ></field>
-				<field name="next_symbol_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="DESC_TWEEN_WIDTH" size="50" ></field>
-				<field name="next_symbol_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="DESC_TWEEN_HEIGHT" size="50" ></field>
-				<field name="next_symbol_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="DESC_TWEEN_ROTATION" size="50" ></field>
-				<field name="next_symbol_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="DESC_TWEEN_ALPHA" size="50" ></field>
-				<field name="next_symbol_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="DESC_TWEEN_TINT" size="50" ></field>
-				<field name="next_symbol_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="DESC_TWEEN_SCALEX" size="50" ></field>
-				<field name="next_symbol_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="DESC_TWEEN_SCALEY" size="50" ></field>
+				<field name="next_symbol_x" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_X" description="MOD_VC3S_FIELD_TWEEN_X_DESC" size="50" ></field>
+				<field name="next_symbol_y" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_Y" description="MOD_VC3S_FIELD_TWEEN_Y_DESC" size="50" ></field>
+				<field name="next_symbol_width" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_WIDTH" description="MOD_VC3S_FIELD_TWEEN_WIDTH_DESC" size="50" ></field>
+				<field name="next_symbol_height" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_HEIGHT" description="MOD_VC3S_FIELD_TWEEN_HEIGHT_DESC" size="50" ></field>
+				<field name="next_symbol_rotation" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ROTATION" description="MOD_VC3S_FIELD_TWEEN_ROTATION_DESC" size="50" ></field>
+				<field name="next_symbol_alpha" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_ALPHA" description="MOD_VC3S_FIELD_TWEEN_ALPHA_DESC" size="50" ></field>
+				<field name="next_symbol_tint" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_TINT" description="MOD_VC3S_FIELD_TWEEN_TINT_DESC" size="50" ></field>
+				<field name="next_symbol_scaleX" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEX" description="MOD_VC3S_FIELD_TWEEN_SCALEX_DESC" size="50" ></field>
+				<field name="next_symbol_scaleY" type="text" default="" label="MOD_VC3S_FIELD_TWEEN_SCALEY" description="MOD_VC3S_FIELD_TWEEN_SCALEY_DESC" size="50" ></field>
 	
 			</fieldset>
 		</fields>
