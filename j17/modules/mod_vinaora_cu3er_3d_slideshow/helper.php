@@ -47,7 +47,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			$xml = simplexml_load_file( JPATH_BASE.DS.$name );
 		}
 		// Load from URL if it is .xml.php
-		elseif ( $ext == '.xml.php' ) {
+		elseif ( $ext == '.php' ) {
 			$xml = simplexml_load_file( JURI::base().JPath::clean($name, '/') );
 		}
 		else{
@@ -662,12 +662,12 @@ class modVinaoraCu3er3DSlideshowHelper
 	public static function addSWFObject($source='local', $version='2.2'){
 		
 		if($source == 'local'){
-			JHTML::script("media/mod_vinaora_cu3er_3d_slideshow/js/swfobject/$version/swfobject.min.js");
+			JHTML::script("media/mod_vinaora_cu3er_3d_slideshow/js/swfobject/$version/swfobject.js");
 			return true;
 		}
 		
 		if($source == 'google'){
-			JHTML::script("https://ajax.googleapis.com/ajax/libs/swfobject/$version/swfobject.min.js");
+			JHTML::script("https://ajax.googleapis.com/ajax/libs/swfobject/$version/swfobject.js");
 			return true;
 		}
 		
