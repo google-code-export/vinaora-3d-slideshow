@@ -83,7 +83,7 @@ header ("Cache-Control: max-age=86400, must-revalidate");
 		<transition num="6" slicing="horizontal" direction="right" duration="0.8" delay="0.05" z_multiplier="5"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>demo1/slide_6.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_6.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 

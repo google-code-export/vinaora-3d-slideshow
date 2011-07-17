@@ -27,7 +27,11 @@ header ("Cache-Control: max-age=86400, must-revalidate");
 	<slides>
 		<slide>
 			<url><?php echo $base_path; ?>images/demo3/slide_1.jpg</url>
-			<description />
+			<description>
+				<link target="_blank">http://vinaora.com</link>
+				<heading>Vinaora Cu3er 3D Slideshow</heading>
+				<paragraph>Paragraph text - put your text here and describe your beautiful slide. Paragraph text - put your text here and describe your beautiful slide. Paragraph text - put your text here and describe your beautiful slide.</paragraph>
+			</description>
 		</slide>
 		<!-- changing transition between first & second slide -->
 		<transition num="3" slicing="vertical" direction="down"/>
