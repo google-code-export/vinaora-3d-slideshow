@@ -65,7 +65,7 @@
 			</fieldset>
 			<fieldset name="transition">
 				<!-- TRANSITION -->
-				<field name="transition_type" type="list" default="custom" label="MOD_VC3S_FIELD_TRANSITION_TYPE" description="MOD_VC3S_FIELD_TRANSITION_TYPE_DESC" >
+				<field name="transition_type" type="list" default="auto" label="MOD_VC3S_FIELD_TRANSITION_TYPE" description="MOD_VC3S_FIELD_TRANSITION_TYPE_DESC" >
 					<option value="none">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_NONE</option>
 					<option value="auto">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_AUTO</option>
 					<option value="first">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_FIRST</option>
@@ -78,10 +78,7 @@
 				<field name="transition_delay" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_DELAY" description="MOD_VC3S_FIELD_TRANSITION_DELAY_DESC" size="50" ></field>
 				<field name="transition_shader" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_SHADER" description="MOD_VC3S_FIELD_TRANSITION_SHADER_DESC" size="50" ></field>
 				<field name="transition_light_position" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_LIGHT_POSITION" description="MOD_VC3S_FIELD_TRANSITION_LIGHT_POSITION_DESC" size="50" ></field>
-				<!--
-				<field name="transition_cube_color" type="colorpicker" default="#ffffff" cellwidth="7" cellheight="10" top="20" left="-30" label="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR" description="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR_DESC" />
-				-->
-				<field name="transition_cube_color" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR" description="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR_DESC" size="50" ></field>
+				<field name="transition_cube_color" type="colorpicker" default="#333333" cellwidth="7" cellheight="10" top="20" left="-30" label="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR" description="MOD_VC3S_FIELD_TRANSITION_CUBER_COLOR_DESC" />
 				<field name="transition_z_multiplier" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_Z_MULTIPLIER" description="MOD_VC3S_FIELD_TRANSITION_Z_MULTIPLIER_DESC" size="50" ></field>
 			</fieldset>
 			
@@ -95,7 +92,7 @@
 				<field name="description_round_corners" type="text" default="0, 0, 0, 0" label="MOD_VC3S_FIELD_DESCRIPTION_ROUND_CORNERS" description="MOD_VC3S_FIELD_DESCRIPTION_ROUND_CORNERS_DESC" size="50" ></field>
 				<field name="description_heading_font" type="text" default="Georgia" label="MOD_VC3S_FIELD_DESCRIPTION_HEADING_FONT" description="MOD_VC3S_FIELD_DESCRIPTION_HEADING_FONT_DESC" size="50" ></field>
 				<field name="description_heading_text_size" type="text" default="18" label="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_SIZE" description="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_SIZE_DESC" size="50" ></field>
-				<field name="description_heading_text_color" type="text" default="0x000000" label="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_COLOR" description="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_COLOR_DESC" size="50" ></field>
+				<field name="description_heading_text_color" type="colorpicker" default="#000000" cellwidth="7" cellheight="10" top="20" left="-30" label="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_COLOR" description="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_COLOR_DESC" />
 				<field name="description_heading_text_align" type="list" default="left" label="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_ALIGN" description="MOD_VC3S_FIELD_DESCRIPTION_HEADING_TEXT_ALIGN_DESC" >
 					<option value="left">MOD_VC3S_FIELD_OPTION_LEFT</option>
 					<option value="center">MOD_VC3S_FIELD_OPTION_CENTER</option>
@@ -107,7 +104,7 @@
 
 				<field name="description_paragraph_font" type="text" default="Arial" label="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_FONT" description="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_FONT_DESC" size="50" ></field>
 				<field name="description_paragraph_text_size" type="text" default="12" label="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_SIZE" description="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_SIZE_DESC" size="50" ></field>
-				<field name="description_paragraph_text_color" type="text" default="0x000000" label="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_COLOR" description="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_COLOR_DESC" size="50" ></field>
+				<field name="description_paragraph_text_color" type="colorpicker" default="#000000" cellwidth="7" cellheight="10" top="20" left="-30" label="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_COLOR" description="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_COLOR_DESC" />
 				<field name="description_paragraph_text_align" type="list" default="left" label="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_ALIGN" description="MOD_VC3S_FIELD_DESCRIPTION_PARAGRAPH_TEXT_ALIGN_DESC" >
 					<option value="left">MOD_VC3S_FIELD_OPTION_LEFT</option>
 					<option value="center">MOD_VC3S_FIELD_OPTION_CENTER</option>

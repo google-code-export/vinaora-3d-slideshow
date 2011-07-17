@@ -22,7 +22,14 @@ class modVinaoraCu3er3DSlideshowHelper
 
 	function __construct(&$params){
 		$this->params = $params;
-		$this->getItems();
+		
+		$color = $this->params->get('description_heading_text_color', '#000000');
+		$color = "0x".ltrim($color, "#");
+		$this->params->set('description_heading_text_color', $color);
+		
+		$color = $this->params->get('description_paragraph_text_color', '#000000');
+		$color = "0x".ltrim($color, "#");
+		$this->params->set('description_paragraph_text_color', $color);		
 	}
 	
 	/*
@@ -93,6 +100,8 @@ class modVinaoraCu3er3DSlideshowHelper
 	 * Create content of the config file
 	 */
 	public function getXML(){
+		$this->getItems();
+
 		$xml = '<?xml version="1.0" encoding="utf-8"?>';
 		
 		// Create Element - <cu3er>
@@ -346,14 +355,14 @@ class modVinaoraCu3er3DSlideshowHelper
 				"round_corners" 				=> $this->params->get('description_round_corners', '0, 0, 0, 0'),
 				"heading_font" 					=> $this->params->get('description_heading_font', 'Georgia'),
 				"heading_text_size" 			=> $this->params->get('description_heading_text_size', '18'),
-				"heading_text_color" 			=> $this->params->get('description_heading_text_color', '0x000000'),
+				"heading_text_color" 			=> $this->params->get('description_heading_text_color', '#000000'),
 				"heading_text_align" 			=> $this->params->get('description_heading_text_align', 'left'),
 				"heading_text_margin" 			=> $this->params->get('description_heading_text_margin', '10, 25, 0, 25'),
 				"heading_text_leading" 			=> $this->params->get('description_heading_text_leading', '0'),
 				"heading_text_letterSpacing"	=> $this->params->get('description_heading_text_letterSpacing', '0'),
 				"paragraph_font" 				=> $this->params->get('description_paragraph_font', 'Arial'),
 				"paragraph_text_size" 			=> $this->params->get('description_paragraph_text_size', '12'),
-				"paragraph_text_color" 			=> $this->params->get('description_paragraph_text_color', '0x000000'),
+				"paragraph_text_color" 			=> $this->params->get('description_paragraph_text_color', '#000000'),
 				"paragraph_text_align" 			=> $this->params->get('description_paragraph_text_align', 'left'),
 				"paragraph_text_margin" 		=> $this->params->get('description_paragraph_text_margin', '5, 25, 0, 25'),
 				"paragraph_text_leading" 		=> $this->params->get('description_paragraph_text_leading', '0'),
