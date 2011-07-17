@@ -20,6 +20,7 @@
 	</files>
 	<media folder="media" destination="mod_vinaora_cu3er_3d_slideshow">
 		<filename>index.html</filename>
+		<filename>intro.html</filename>
 		<folder>css</folder>
 		<folder>config</folder>
 		<folder>flash</folder>
