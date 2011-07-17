@@ -1,4 +1,15 @@
-<?php 
+<?php
+/**
+ * @version		$Id: demo3.xml.php 2011-07-20 vinaora $
+ * @package		Vinaora Cu3er 3D Slideshow
+ * @subpackage	mod_vinaora_cu3er_3d_slideshow
+ * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @website		http://vinaora.com
+ * @twitter		http://twitter.com/vinaora
+ * @facebook	http://facebook.com/vinaora
+ */
+ 
 $script		= $_SERVER['SCRIPT_NAME'];
 $base_path	= substr($script, 0 , strpos($script, 'config/'));
 header ("content-type: text/xml");
