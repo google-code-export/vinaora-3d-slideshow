@@ -64,7 +64,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			$xml = simplexml_load_file( JURI::base().JPath::clean($name, '/') );
 		}
 		else{
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_CONFIG_INVALID'));
+			JError::raiseNotice('0', JText::_('MOD_VC3S_ERROR_FILE_CONFIG_INVALID'));
 			return false;
 		}
 
@@ -88,12 +88,12 @@ class modVinaoraCu3er3DSlideshowHelper
 		if ( is_writeable(dirname($name)) ){
 			if ( JFile::write($name, $this->getXML()) ) return true;
 			else{
-				JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_UNWRITABLE'));
+				JError::raiseNotice('0', JText::_('MOD_VC3S_ERROR_FILE_UNWRITABLE'));
 			}
 		}
 		else{
 			// Folder is not writeable
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_DIRECTORY_UNWRITABLE'));
+			JError::raiseNotice('0', JText::_('MOD_VC3S_ERROR_DIRECTORY_UNWRITABLE'));
 		}
 
 		return false;
