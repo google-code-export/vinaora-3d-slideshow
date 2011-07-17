@@ -1,10 +1,13 @@
 <?php
 /**
- * @version		:  2011-07-13 02:07:11$
- * @author		 
- * @package		Abcdef
- * @copyright	Copyright (C) 2011- . All rights reserved.
- * @license		
+ * @version		$Id: default.php 2011-07-20 vinaora $
+ * @package		Vinaora Cu3er 3D Slideshow
+ * @subpackage	mod_vinaora_cu3er_3d_slideshow
+ * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @website		http://vinaora.com
+ * @twitter		http://twitter.com/vinaora
+ * @facebook	http://facebook.com/vinaora
  */
 
 // no direct access
@@ -14,7 +17,7 @@ defined('_JEXEC') or die;
 <!-- Website http://vinaora.com -->
 <script type="text/javascript">
 	var flashvars = {};
-	flashvars.xml = "<?php echo $config_path; ?>";
+	flashvars.xml = "<?php echo $config_name; ?>";
 	flashvars.font = "<?php echo $font_path; ?>";
 	var attributes = {};
 	attributes.wmode = "transparent";

@@ -1,10 +1,13 @@
 <?php
 /**
- * @version		:  2011-07-13 02:07:11$
- * @author		 
- * @package		Abcdef
- * @copyright	Copyright (C) 2011- . All rights reserved.
- * @license		
+ * @version		$Id: helper.php 2011-07-20 vinaora $
+ * @package		Vinaora Cu3er 3D Slideshow
+ * @subpackage	mod_vinaora_cu3er_3d_slideshow
+ * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @website		http://vinaora.com
+ * @twitter		http://twitter.com/vinaora
+ * @facebook	http://facebook.com/vinaora
  */
 
 // no direct access
@@ -19,8 +22,7 @@ class modVinaoraCu3er3DSlideshowHelper
 
 	function __construct(&$params){
 		$this->params = $params;
-
-		// var_dump($this->params);
+		$this->getItems();
 	}
 	
 	/*
@@ -35,7 +37,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		$name = ltrim($name, DS);
 		
 		if ( !is_file(JPATH_BASE.DS.$name) ){
-			JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_CONFIG_NOTFOUND'));
+			// JError::raiseNotice('0', JText::_('MOD_VINAORA_CU3ER_3D_SLIDESHOW_ERROR_FILE_CONFIG_NOTFOUND'));
 			return false;
 		}
 
@@ -152,7 +154,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		
 		$xml = $node->asXML();
 		
-		$xml = self::replaceTweenName($xml);
+		// $xml = self::replaceTweenName($xml);
 
 		return $xml;
 	}
@@ -380,7 +382,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	/*
 	 * Create Element <transiton> for slide
 	 */
-	private function _createTransition(&$node, $position=1){
+	private function _createTransition(&$node, $position){
 
 		if ($position){
 			$nodeL1 = $node->addChild('transition');
@@ -388,6 +390,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		else{
 			$nodeL1 = $node->addChild('transitions');
 			$position = 1;
+			echo "xxx";
 		}
 
 		$attbs = array("num", "slicing", "direction", "duration", "delay", "shader", "light_position", "cube_color", "z_multiplier");
@@ -476,7 +479,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 */
 	private function _createSlides(&$node){
 
-		$nodeL1 =& $node->addChild('Slides');
+		$nodeL1 =& $node->addChild('slides');
 
 		$slides = explode("\n", $this->params->get('slide_url'));
 
@@ -641,7 +644,7 @@ class modVinaoraCu3er3DSlideshowHelper
 	 *
 	 */
 	public static function validImageURL($str){
-		
+		return $str;
 	}
 
 	/*
@@ -673,5 +676,23 @@ class modVinaoraCu3er3DSlideshowHelper
 		
 		return false;
 
-	}	
+	}
+	
+	private function getItems(){
+		$filter		= '([^\s]+(\.(?i)(jpg|png|gif|bmp))$)';
+		$exclude	= array('.svn', 'CVS', '.DS_Store', '__MACOSX', '.htaccess');
+
+		$slide_dir	= $this->params->get('slide_dir');
+		if ($slide_dir && $slide_dir!='-1'){
+			$items		= JFolder::files(JPATH_ROOT.'/images/'.$slide_dir, $filter, false, false, $exclude);
+			
+			if (!empty($items) && count($items)){
+				foreach($items as $key=>$value){
+					$items[$key] = "images/$slide_dir/$value";
+				}
+				$str = implode($this->separator, $items);
+				$this->params->set("slide_url", $str);
+			}
+		}
+	}
 }

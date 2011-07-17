@@ -1,10 +1,13 @@
 <?php
 /**
- * @version		:  2011-07-13 02:07:11$
- * @author		 
- * @package		Abcdef
- * @copyright	Copyright (C) 2011- . All rights reserved.
- * @license		
+ * @version		$Id: mod_vinaora_cu3er_3d_slideshow.php 2011-07-20 vinaora $
+ * @package		Vinaora Cu3er 3D Slideshow
+ * @subpackage	mod_vinaora_cu3er_3d_slideshow
+ * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @website		http://vinaora.com
+ * @twitter		http://twitter.com/vinaora
+ * @facebook	http://facebook.com/vinaora
  */
 
 // no direct access
@@ -13,10 +16,13 @@ defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__).DS.'helper.php';
 
-$config_custom		= $params->get( 'config_custom' );
-$config_name		= $params->get( 'config_code' );
+$module_id = $module->id;
 
-$config_name		= ($config_name) ? $config_name : "demo1.xml.php";
+$config_custom		= $params->get( 'config_custom' );
+$lastedit			= $params->get( 'lastedit' );
+$config_name		= "V$module_id-$lastedit.xml";
+
+$config_name		= ($lastedit) ? $config_name : "demo1.xml.php";
 $config_name		= ($config_custom=="-1") ? $config_name : $config_custom;
 
 $configHelper = new modVinaoraCu3er3DSlideshowHelper($params);
@@ -43,8 +49,19 @@ $height = (!empty($height)) ? $height : $params->get( 'slide_panel_height' );
 // Add SWFObject Library to <head> tag
 $source = $params->get('swfobject_source', 'local');
 $version = $params->get('swfobject_version', '2.2');
-
 modVinaoraCu3er3DSlideshowHelper::addSWFObject($source, $version);
+
+// Initialize variables
+$media					= JURI::base().'media/mod_vinaora_cu3er_3d_slideshow/';		// Use JURI::base() for Full URL
+$config_name			= JURI::base().$config_name;
+$slideshow_path 		= $media.'flash/cu3er.swf';
+$expressInstall_path 	= $media.'js/swfobject/expressInstall.swf';
+$flash_version			= '9';
+
+$swffont				= $params->get('swffont');
+$font_path				= ($swffont!= '-1') ? $media.'flash/fonts/'.$swffont : '';
+
+$container				= 'vinaora-3d-slideshow'.$module_id;
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
