@@ -53,7 +53,7 @@
 				<!-- SLIDE -->
 				<field type="spacer" name="spacer11" class="text" hr="true"/>
 				<field name="slide_dir" type="folderlist" default="-1" label="MOD_VC3S_FIELD_SLIDE_DIRECTORY" description="MOD_VC3S_FIELD_SLIDE_DIRECTORY_DESC" directory="images" filter="" exclude="" hide_none="0" hide_default="1" ></field>
-				<field name="slide_url" type="textarea" default="" label="MOD_VC3S_FIELD_SLIDE_URL" description="MOD_VC3S_FIELD_SLIDE_URL_DESC" rows="5" cols="30" ></field>
+				<field name="slide_url" type="hidden" default="" label="MOD_VC3S_FIELD_SLIDE_URL" description="MOD_VC3S_FIELD_SLIDE_URL_DESC" rows="5" cols="30" ></field>
 				<field name="slide_link" type="textarea" default="" label="MOD_VC3S_FIELD_SLIDE_LINK" description="MOD_VC3S_FIELD_SLIDE_LINK_DESC" rows="5" cols="30" ></field>
 				<field name="slide_link_target" type="textarea" default="" label="MOD_VC3S_FIELD_SLIDE_LINK_TARGET" description="MOD_VC3S_FIELD_SLIDE_LINK_TARGET_DESC" rows="5" cols="30" ></field>
 				<field name="slide_description_heading" type="textarea" default="" label="MOD_VC3S_FIELD_SLIDE_DESCRIPTION_HEADING" description="MOD_VC3S_FIELD_SLIDE_DESCRIPTION_HEADING_DESC" rows="5" cols="30" ></field>
@@ -69,7 +69,6 @@
 					<option value="auto">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_AUTO</option>
 					<option value="first">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_FIRST</option>
 					<option value="custom">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_CUSTOM</option>
-					<option value="random">MOD_VC3S_FIELD_OPTION_TRANSITION_TYPE_RANDOM</option>
 				</field>
 				<field name="transition_num" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_NUM" description="MOD_VC3S_FIELD_TRANSITION_NUM_DESC" size="50" ></field>
 				<field name="transition_slicing" type="text" default="" label="MOD_VC3S_FIELD_TRANSITION_SLICING" description="MOD_VC3S_FIELD_TRANSITION_SLICING_DESC" size="50" ></field>
