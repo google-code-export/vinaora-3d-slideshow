@@ -1,9 +1,6 @@
 <?php 
 $script		= $_SERVER['SCRIPT_NAME'];
-// Get the beginning of URL
-// Eg: URL = /media/mod_vinaora_cu3er/config/demo1.xml.php --> Result = /
-// Eg: URL = /path/to/sub/directory/media/mod_vinaora_cu3er/config/demo1.xml.php --> Result = /path/to/sub/directory/
-$base_path	= substr($script, 0 , strpos($script, 'media/mod_vinaora_cu3er'));
+$base_path	= substr($script, 0 , strpos($script, 'config/'));
 header ("content-type: text/xml");
 header ("Cache-Control: max-age=86400, must-revalidate");
 ?>
@@ -51,62 +48,62 @@ header ("Cache-Control: max-age=86400, must-revalidate");
 	<slides>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_1.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_1.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition direction="left"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_2.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_2.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition duration="0.6" delay=".2" direction="down"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_3.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_3.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition num="3" slicing="horizontal" direction="left" delay="0.05"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_4.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_4.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition num="3"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_5.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_5.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition num="6" slicing="horizontal" direction="right" duration="0.8" delay="0.05" z_multiplier="5"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_6.jpg</url>
+			<url><?php echo $base_path; ?>demo1/slide_6.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition num="6" slicing="vertical" direction="down" shader="phong" delay="0.05"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_7.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_7.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
 		<transition num="4" direction="down" slicing="horizontal" z_multiplier="6" delay="0.1"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_8.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_8.jpg</url>
 		</slide>
 
 		<transition num="4" direction="up" z_multiplier="2.5" delay="0.03"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_9.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_9.jpg</url>
 			<description>
 				<link target="_blank">http://vinaora.com</link>
 				<heading>Put your heading here!</heading>
@@ -117,13 +114,13 @@ header ("Cache-Control: max-age=86400, must-revalidate");
 		<transition direction="right"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_10.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_10.jpg</url>
 		</slide>
 
 		<transition num="3" direction="up"/>
 
 		<slide>
-			<url><?php echo $base_path; ?>media/mod_vinaora_cu3er/images/demo1/slide_11.jpg</url>
+			<url><?php echo $base_path; ?>images/demo1/slide_11.jpg</url>
 			<link target="_blank">http://vinaora.com</link>
 		</slide>
 
