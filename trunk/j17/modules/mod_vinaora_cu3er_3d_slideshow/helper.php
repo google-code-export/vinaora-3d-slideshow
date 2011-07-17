@@ -23,12 +23,16 @@ class modVinaoraCu3er3DSlideshowHelper
 	function __construct(&$params){
 		$this->params = $params;
 		
+		$color = $this->params->get('transition_cube_color', '#000000');
+		$color = str_replace('#', '0x', $color);
+		$this->params->set('transition_cube_color', $color);		
+		
 		$color = $this->params->get('description_heading_text_color', '#000000');
-		$color = "0x".ltrim($color, "#");
+		$color = str_replace('#', '0x', $color);
 		$this->params->set('description_heading_text_color', $color);
 		
 		$color = $this->params->get('description_paragraph_text_color', '#000000');
-		$color = "0x".ltrim($color, "#");
+		$color = str_replace('#', '0x', $color);
 		$this->params->set('description_paragraph_text_color', $color);		
 	}
 	
@@ -647,6 +651,43 @@ class modVinaoraCu3er3DSlideshowHelper
 		$target = in_array($target, $valid) ? $target : '_blank';
 
 		return $target;
+	}
+	
+	/*
+	 * Valid Color
+	 */
+	public static function validColor($color, $prefix="", $default="ffffff"){
+		$color = strtolower ( trim($color) );
+		
+		if (empty($color)) return $prefix.$default;
+		
+		// Remove '0x' from the beginning of string if exist
+		$color = ltrim($color, "0x") ;
+		
+		// Remove '#' from the beginning of string if exist
+		$color = ltrim($color, "#") ;
+		
+		// The length of string less than or equal 6
+		$color = substr($color, 0, 6);
+		
+		$valid = true;
+		$hexa = '0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f';
+		$hexa = explode(",", $hexa);
+
+		// TODO: check the length of $color
+		
+		for($i=0; $i<strlen($color); $i++){
+			if(!in_array($color[$i], $hexa)){
+				$valid = false;
+				break;
+			}
+		}
+		
+		$color = ($valid === false) ? $default : $color;
+		
+		$color = $prefix.$color;
+		
+		return $color;
 	}
 
 	/*
