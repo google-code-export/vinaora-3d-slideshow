@@ -1,8 +1,8 @@
 <?php
 /**
- * @version		$Id: lastedit.php 2011-07-05 vinaora $
- * @package		VINAORA SLICK SLIDESHOW
- * @subpackage	mod_vinaora_slickshow
+ * @version		$Id: lastedit.php 2011-07-20 vinaora $
+ * @package		Vinaora Cu3er 3D Slideshow
+ * @subpackage	mod_vinaora_cu3er_3d_slideshow
  * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  * @website		http://vinaora.com
@@ -26,14 +26,8 @@ class JFormFieldLastEdit extends JFormField {
 		$now = &JFactory::getDate();
 		$now->setOffset($offset);
 		
-		$value	= $now->toFormat('%Y%m%d_%H%M%S');
-		
-		$cid		= JRequest::getVar('cid');
-		$module_id	= $cid[0];
-		
-		$module_id	= $module_id ? $module_id : JRequest::getVar('id');
-		
-		$value	= "V".$module_id.'_'.$value.'.xml';
+		$value	= $now->toFormat('%Y%m%d-%H%M%S');
+
 		return '<input readonly="readonly" type="hidden" id="'.$this->id.'" name="'.$this->name.'" value="'.$value.'" size="50">';
 	}
 	
