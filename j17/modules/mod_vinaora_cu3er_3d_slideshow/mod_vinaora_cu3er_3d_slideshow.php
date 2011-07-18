@@ -39,7 +39,7 @@ if ( $config ){
 }
 // Config File not exist
 else{
-	$configHelper->createConfig($config_name);
+	if(substr($config_name, -4, 4) == '.xml') $configHelper->createConfig($config_name);
 }
 
 
