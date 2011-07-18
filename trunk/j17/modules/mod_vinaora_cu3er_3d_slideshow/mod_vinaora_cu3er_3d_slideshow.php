@@ -39,7 +39,7 @@ if ( $config ){
 }
 // Config File not exist
 else{
-	if(substr($config_name, -4, 4) == '.xml') $configHelper->createConfig($config_name);
+	if($config_custom=="-1") $configHelper->createConfig($config_name);
 }
 
 
@@ -56,7 +56,7 @@ $media					= JURI::base().'media/mod_vinaora_cu3er_3d_slideshow/';		// Use JURI:
 $config_name			= JURI::base().$config_name;
 $slideshow_path 		= $media.'flash/cu3er.swf';
 $expressInstall_path 	= $media.'js/swfobject/expressInstall.swf';
-$flash_version			= '9';
+$flash_version			= '9.0.0';
 
 $swffont				= $params->get('swffont');
 $font_path				= ($swffont!= '-1') ? $media.'flash/fonts/'.$swffont : '';
