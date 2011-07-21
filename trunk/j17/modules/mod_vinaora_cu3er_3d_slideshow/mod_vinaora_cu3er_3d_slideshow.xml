@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.7.0" method="upgrade" client="site">
+<extension type="module" version="1.7.2" method="upgrade" client="site">
 	<name>Vinaora Cu3er 3D Slideshow</name>
 	<author>VINAORA</author>
 	<creationDate>2011-07-21</creationDate>
@@ -221,6 +221,12 @@
 					<option value="">JNONE</option>
 				</field>
 				<field name="swfobject_version" type="folderlist" default="2.2" directory="/media/mod_vinaora_cu3er_3d_slideshow/js/swfobject/" filter="" exclude="" stripext="" hide_none="1" hide_default="1" label="MOD_VC3S_FIELD_SWFOBJECT" description="MOD_VC3S_FIELD_SWFOBJECT_DESC" />
+				<field name="flash_wmode" type="list" default="" label="MOD_VC3S_FIELD_FLASH_WMODE" description="MOD_VC3S_FIELD_FLASH_WMODE_DESC" >
+					<option value="">JDEFAULT</option>
+					<option value="window">MOD_VC3S_OPTION_FLASH_WINDOW</option>
+					<option value="opaque">MOD_VC3S_OPTION_FLASH_OPAQUE</option>
+					<option value="transparent">MOD_VC3S_OPTION_FLASH_TRANSPARENT</option>
+				</field>
 			</fieldset>
 			
 			<fieldset name="extra">
