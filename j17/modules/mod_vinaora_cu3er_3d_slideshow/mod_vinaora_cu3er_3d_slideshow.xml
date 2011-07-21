@@ -2,12 +2,12 @@
 <extension type="module" version="1.7.0" method="upgrade" client="site">
 	<name>Vinaora Cu3er 3D Slideshow</name>
 	<author>VINAORA</author>
-	<creationDate>2011-07-14</creationDate>
+	<creationDate>2011-07-21</creationDate>
 	<copyright>Copyright (C) 2010-2011 VINAORA. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>admin@vinaora.com</authorEmail>
 	<authorUrl>http://vinaora.com</authorUrl>
-	<version>1.7.0</version>
+	<version>1.7.1</version>
 	<description>MOD_VINAORA_CU3ER_3D_SLIDESHOW_DESC</description>
 	<files>
 		<filename module="mod_vinaora_cu3er_3d_slideshow">mod_vinaora_cu3er_3d_slideshow.php</filename>
