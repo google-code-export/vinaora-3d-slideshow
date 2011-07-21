@@ -49,6 +49,7 @@ $height = (!empty($height)) ? $height : $params->get( 'slide_panel_height' );
 // Add SWFObject Library to <head> tag
 $source = $params->get('swfobject_source', 'local');
 $version = $params->get('swfobject_version', '2.2');
+$flash_wmode = $params->get('flash_wmode');
 modVinaoraCu3er3DSlideshowHelper::addSWFObject($source, $version);
 
 // Initialize variables

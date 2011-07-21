@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
 	flashvars.xml = "<?php echo $config_name; ?>";
 	flashvars.font = "<?php echo $font_path; ?>";
 	var attributes = {};
-	attributes.wmode = "transparent";
+	attributes.wmode = "<?php echo $flash_wmode; ?>";
 	attributes.id = "slider<?php echo $module_id; ?>";
 	swfobject.embedSWF(<?php echo "\"$slideshow_path\", \"$container\", \"$width\", \"$height\", \"$flash_version\", \"$expressInstall_path\""; ?>, flashvars, attributes);
 </script>
