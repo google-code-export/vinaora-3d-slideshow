@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 2011-07-20 vinaora $
+ * @version		$Id: default.php 2011-07-21 vinaora $
  * @package		Vinaora Cu3er 3D Slideshow
  * @subpackage	mod_vinaora_cu3er_3d_slideshow
  * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
@@ -28,7 +28,8 @@ defined('_JEXEC') or die;
 	<a href="http://www.adobe.com/go/getflashplayer">
 		<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
 	</a>
-	<a href="http://vinaora.com/">Joomla! Guides, Joomla Tutorials and Templates</a>
+	<br />
+	<a href="http://vinaora.com/">Free Joomla Templates, extensions &amp; tutorials</a>
 </div>
 <!-- Website http://vinaora.com -->
 <!-- END: VINAORA CU3ER 3D SLIDE SHOW -->
