@@ -538,7 +538,7 @@ class modVinaoraCu3er3DSlideshowHelper
 		}
 
 		$param = $this->params->get('enable_description_box');
-		if ( strlen($param) ){
+		if ( $param ){
 
 			$nodeL1 =& $nodeL0->addChild('description');
 
