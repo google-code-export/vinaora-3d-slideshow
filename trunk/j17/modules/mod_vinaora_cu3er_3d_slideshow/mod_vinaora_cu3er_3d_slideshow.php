@@ -28,7 +28,7 @@ $config_name		= ($config_custom=="-1") ? $config_name : $config_custom;
 $configHelper = new modVinaoraCu3er3DSlideshowHelper($params);
 
 // Check Config file (.xml) exits and valid XML
-$config_name = 'media/mod_vinaora_cu3er_3d_slideshow/config/'.$config_name;
+$config_name = '/media/mod_vinaora_cu3er_3d_slideshow/config/'.$config_name;
 
 $config = $configHelper->getConfig($config_name);
 
@@ -53,8 +53,8 @@ $flash_wmode = $params->get('flash_wmode');
 modVinaoraCu3er3DSlideshowHelper::addSWFObject($source, $version);
 
 // Initialize variables
-$media					= JURI::base().'media/mod_vinaora_cu3er_3d_slideshow/';		// Use JURI::base() for Full URL
-$config_name			= JURI::base().$config_name;
+$media					= JURI::base(true).'/media/mod_vinaora_cu3er_3d_slideshow/';		// Use JURI::base() for Full URL
+$config_name			= JURI::base(true).$config_name;
 $slideshow_path 		= $media.'flash/cu3er.swf';
 $expressInstall_path 	= $media.'js/swfobject/expressInstall.swf';
 $flash_version			= '9.0.0';

@@ -403,7 +403,6 @@ class modVinaoraCu3er3DSlideshowHelper
 		else{
 			$nodeL1 = $node->addChild('transitions');
 			$position = 1;
-			echo "xxx";
 		}
 
 		$attbs = array("num", "slicing", "direction", "duration", "delay", "shader", "light_position", "cube_color", "z_multiplier");
@@ -738,7 +737,7 @@ class modVinaoraCu3er3DSlideshowHelper
 			
 			if (!empty($items) && count($items)){
 				foreach($items as $key=>$value){
-					$items[$key] = "images/$slide_dir/$value";
+					$items[$key] = JURI::base(true)."/images/$slide_dir/$value";
 				}
 				$str = implode($this->separator, $items);
 				$this->params->set("slide_url", $str);
