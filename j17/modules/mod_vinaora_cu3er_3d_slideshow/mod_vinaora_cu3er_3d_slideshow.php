@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: mod_vinaora_cu3er_3d_slideshow.php 2011-07-20 vinaora $
+ * @version		$Id: mod_vinaora_cu3er_3d_slideshow.php 2011-08-08 vinaora $
  * @package		Vinaora Cu3er 3D Slideshow
  * @subpackage	mod_vinaora_cu3er_3d_slideshow
  * @copyright	Copyright (C) 2010 - 2011 VINAORA. All rights reserved.
